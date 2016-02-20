@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Coastal Watershed Council Field Data Sheet</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+	<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/smoothness.datepick.css"> 
+	<style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+    </style>
+
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+	<script src="./js/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.plugin.min.js"></script> 
+	<script type="text/javascript" src="./js/jquery.datepick.js"></script>
+	
+<script>
+$(document).bind('mobileinit',function(){
+    $.mobile.changePage.defaults.changeHash = false;
+    $.mobile.hashListeningEnabled = false;
+    $.mobile.pushStateEnabled = false;
+});</script>
+	<script src="./js/jquery.mobile-1.4.5.min.js"></script>
+    <script async defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyBL_Mp0VJY5mOM1uGc-jT41FCN2z3XP5Z0">
+    </script>
+    <script src="./js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+	</script>
+
+</head>
+
+<body>
+
+<div data-role="page" id="dataCard" class="ui-responsive-panel">
+	<div data-role="header" class="kgheader">
+        <h2>FIELD DATA SHEET</h2>
+        <a href="#info"><img src="images/icons-png/bars-black.png"</a>
+        <a href="#help" class="ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-info ui-btn-icon-right ui-alt-icon ui-nodisc-icon ui-btn-right ui-btn">Help</a>
+    </div>
+	<div role="main" class="ui-content">
+        <div id="cardhead" class="ui-field-contain">
+            <label for "name-field">
+            <input type=text class="right50" id="name-field" placeholder="your name" onblur="fillName(this.id);">
+            Group / Your Name
+            </label>
+				<label for "place-field" class="select">Your Location
+				<select name="place-field" id="place-field" data-inline="true" onchange="newPlace()">
+				<!-- <option selected value="GPS">Automatic</option> -->
+				<!-- onblur="fillName(this.id);"> -->
+			</label>
+            <label for "date-field">
+            <input type=text class="right50" id="date-field">
+                Date</label>
+            <label for "recycle">
+            <input type=number class="right25" id="recycle">
+                Pounds of Recycling Collected:
+            </label>
+            <label for "trash">
+            <input type=number class="right25" id="trash">
+                Pounds of Trash Collected:
+            </label>
+        </div>
+        <form id="trashform">
+			<input id="latin" type="hidden" name="lat" value="">
+			<input id="lonin" type="hidden" name="lon"  value="">
+			<input id="name-in" type="hidden" name="namein" value="">
+			<input id="datein" type="hidden" name="datein" value="">
+            <div id="formData"></div><p></p>
+                <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
+        </form>
+    </div>
+
+    <!-- Start of right help panel -->
+    <div data-role="panel" id="help" data-display="overlay" data-position="right" data-theme="a">
+        <div class="header-field">INSTRUCTIONS</div>
+        <p>Please enter your name, or your group's name at the top.</p>
+        <div class="header-field">IMPORTANT</div>
+        <p>Please remember to click the <b>Submit</b> button once you have finished your cleanup.</p>
+    </div>
+
+    <!-- Start of left info panel -->
+    <div data-role="panel" id="info" data-display="overlay" data-theme="a">
+        <div class="header-field">ABOUT</div>
+        <p>
+The Coastal Watershed Council (CWC) is a 501(c)(3) nonprofit organization that was was formed in 1995 in response to the declining health of watersheds in the Monterey Bay region.  Visit our website at</p><a href="#" onclick="splashclick('http://coastal-watershed.org/')"><b>coastal-watershed.org/</b></a></br>
+<address>345 Lake Avenue, Suite F</br>
+Santa Cruz, CA 95062</br>
+<a href=mailto:info@coastal-watershed.org>info@coastal-watershed.org</a></br></address>
+<a href="#" onclick="splashclick('tel: +18314649200')">Phone: (831) 464-9200</a></br>
+<p>Version 1.0</p>
+	</div><!-- /panel -->
+
+</div><!-- /page -->
+
+
+</body>
+</html>

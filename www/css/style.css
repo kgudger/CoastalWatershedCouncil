@@ -1,0 +1,132 @@
+/* Basic */
+
+	body {
+		background: #f5f5f5;
+	}
+
+	body, input, select, textarea, #help {
+		color: #333;
+		font-family: "Source Sans Pro", sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 1.65em;
+		letter-spacing: -0.015em;
+		text-shadow: 0 1px 0 #f3f3f3;
+	}
+	
+	.button_right {
+		float: right;
+		padding: 0 0 1em 1.5em;
+		top: 0.25em;
+	}
+
+	.itemin {
+		white-space:nowrap;
+	}
+	
+	.right25 {
+		float: right !important;
+		width: 20% !important;
+		border: 0 none;
+		border-radius: inherit;
+		margin: 0;
+		min-height: 2.2em;
+		text-align: left;
+	}
+
+	.right50 {
+		float: right !important;
+		width: 50% !important;
+	}
+
+	.left75 {
+		float: left !important;
+		width: 75% !important;
+	}
+
+.ui-controlgroup-controls {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+    float: right !important;
+    width: 28% !important;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0 !important; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.header-field {
+  color: white;
+  background-color: #414141;
+  font-size: 16px;
+  margin-top: 12px;
+  text-align: center;
+}
+img.setwidth {
+	max-width: 300px;
+	width: 100%;
+}
+img.setheight {
+	max-height: 60px;
+	height: 100%;
+}
+img.displaycenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.splashtext {
+	text-align: center;
+}
+.kgheader {
+  color: white !important;
+  background-color: #15BDDE !important;
+}
+.blue_back {
+  background-color: #15BDDE !important;
+}
+.blue_sub {
+  opacity: 1.0 !important;
+  color: white !important;
+}
+.item_field {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #414141;
+    margin: 0.5em 0 0;
+}
+.blue_sub {
+  background: #15BDDE;
+  background-image: -webkit-linear-gradient(top, #15BDDE, #2980b9);
+  background-image: -moz-linear-gradient(top, #15BDDE, #2980b9);
+  background-image: -ms-linear-gradient(top, #15BDDE, #2980b9);
+  background-image: -o-linear-gradient(top, #15BDDE, #2980b9);
+  background-image: linear-gradient(to bottom, #15BDDE, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  color: #ffffff;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin:0 auto; /* this will center  it */
+  display: table;
+}
+
+.blue_sub:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+.button_wrap_inner {
+	text-align: center !important;
+}
