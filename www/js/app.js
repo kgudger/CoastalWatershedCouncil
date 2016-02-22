@@ -27,8 +27,6 @@
 // by the same event or other events.
 
 function onAppReady() {
-    fillName("name-field");
-
     queryString = "command=getCats";
     sendfunc(queryString);
     ready();
@@ -187,17 +185,6 @@ function defaultPosition() {
         val.value++;
     }
 
-	/**
-	 *	onblur function for name field
-	 */
-	function fillName(elt) {
-        var val = document.getElementById(elt).value;
-        var out = document.getElementById("name-in");
-        out.value = val;
- //       alert("Name is " + out.value);
-        var queryString = "command=getTally" + "&namein=" + val ;
-        sendfunc(queryString);
-    }
 	/**
 	 *	onblur function for date field
 	 */

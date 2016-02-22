@@ -53,10 +53,6 @@ $(document).bind('mobileinit',function(){
     </div>
 	<div role="main" class="ui-content">
         <div id="cardhead" class="ui-field-contain">
-            <label for "name-field">
-            <input type=text class="right50" id="name-field" placeholder="your name" onblur="fillName(this.id);">
-            Group / Your Name
-            </label>
 				<label for "place-field" class="select">Your Location
 				<select name="place-field" id="place-field" data-inline="true" onchange="newPlace()">
 				<!-- <option selected value="GPS">Automatic</option> -->
@@ -78,7 +74,6 @@ $(document).bind('mobileinit',function(){
 			<label for "lonin">
 			<input id="lonin" type=text class="right50" name="lon"  value="">
 				Longitude</label>
-			<input id="name-in" type="hidden" name="namein" value="">
 			<input id="datein" type="hidden" name="datein" value="">
             <label for "date-field">
             <input type=text class="right50" id="date-field">
@@ -88,7 +83,11 @@ $(document).bind('mobileinit',function(){
                 Arrival Time</label> -->
            <p>Arrival time: <input type="text" class = "right50" id="arrive-field" data-role="none" size="20"></p>
            <label for "water-name">
-            <input type=text class="right50" id="water-name">Water/body Name</label>
+           <input type=text class="right50" id="water-name">Water/body Name</label>
+           <label for "name-in">
+           <input type=text class="right50" id="name-in" placeholder="your name">
+				Your Name
+           </label>
             <div id="formData"></div><p></p>
                 <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
         </form>
