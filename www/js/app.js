@@ -20,7 +20,6 @@
 	};
 	var Places = [];
 
-
 // The function below is an example of the best way to "start" your app.
 // This example is calling the standard Cordova "hide splashscreen" function.
 // You can add other code to it or add additional functions that are triggered
@@ -100,7 +99,7 @@ function ready() {
 			function(pos) { clearTimeout(location_timeout); showPosition(pos); },
 			function(error) {
 				clearTimeout(location_timeout);
-				console.warn('ERROR(' + err.code + '): ' + err.message);
+				console.warn('ERROR(' + error.code + '): ' + error.message);
 				defaultPosition()
 			},
 			options
@@ -113,6 +112,7 @@ function ready() {
 	$('#date-field').datepick({dateFormat: 'yyyy-mm-dd',
 		onClose: function(dates) { setDate(dates); }
 	});
+	$('#arrive-field').timeEntry({spinnerImage: './images/spinnerDefault.png'});
 	var currentDate = new Date()
 	var day = currentDate.getDate()
 	var month = currentDate.getMonth() + 1
@@ -270,8 +270,8 @@ function sendfunc(params) {
               }
           }
 	}
-//	xmlhttp.open("GET","http://home.loosescre.ws/~keith/SOS/server.php" + '?' + params, true);
-	xmlhttp.open("GET","http://www.saveourshores.org/server.php" + '?' + params, true);
+	xmlhttp.open("GET","http://home.loosescre.ws/~keith/SOS/server.php" + '?' + params, true);
+//	xmlhttp.open("GET","http://www.saveourshores.org/server.php" + '?' + params, true);
 	xmlhttp.send(null);
     }
 }; // sendfunc

@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
 	<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css">
 	<link rel="stylesheet" href="./css/style.css">
-	<link rel="stylesheet" type="text/css" href="./css/smoothness.datepick.css"> 
+	<link rel="stylesheet" type="text/css" href="./css/smoothness.datepick.css">
+	<link rel="stylesheet" href="./css/jquery.timeentry.css">
 	<style>
         /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
         /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
@@ -25,6 +26,7 @@
 	<script src="./js/jquery.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.plugin.min.js"></script> 
 	<script type="text/javascript" src="./js/jquery.datepick.js"></script>
+	<script type="text/javascript" src="./js/jquery.timeentry.js"></script>
 	
 <script>
 $(document).bind('mobileinit',function(){
@@ -62,9 +64,6 @@ $(document).bind('mobileinit',function(){
 				<!-- <option selected value="GPS">Automatic</option> -->
 				<!-- onblur="fillName(this.id);"> -->
 			</label>
-            <label for "date-field">
-            <input type=text class="right50" id="date-field">
-                Date</label>
             <label for "recycle">
             <input type=number class="right25" id="recycle">
                 Pounds of Recycling Collected:
@@ -75,10 +74,23 @@ $(document).bind('mobileinit',function(){
             </label>
         </div>
         <form id="trashform">
-			<input id="latin" type="text" name="lat" value="">
-			<input id="lonin" type="text" name="lon"  value="">
+			<label for "latin">
+			<input id="latin" type=text class="right50" name="lat" value="">
+				Latitude</label>
+			<label for "lonin">
+			<input id="lonin" type=text class="right50" name="lon"  value="">
+				Longitude</label>
 			<input id="name-in" type="hidden" name="namein" value="">
 			<input id="datein" type="hidden" name="datein" value="">
+            <label for "date-field">
+            <input type=text class="right50" id="date-field">
+                Date</label>
+<!--            <label for "arrive-field">
+            <input type=text class="right50" id="arrive-field">
+                Arrival Time</label> -->
+           <p>Arrival time: <input type="text" class = "right50" id="arrive-field" data-role="none" size="20"></p>
+           <label for "water-name">
+            <input type=text class="right50" id="water-name">Water/body Name</label>
             <div id="formData"></div><p></p>
                 <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
         </form>
