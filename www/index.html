@@ -47,26 +47,11 @@ $(document).bind('mobileinit',function(){
 <div data-role="page" id="dataCard" class="ui-responsive-panel">
 	<div data-role="header" class="kgheader">
 		<img src="images/logosmall.png" height = "40" border="0" class="displaycenter"></img>
-        <h2>FIELD DATA SHEET</h2>
         <a href="#info"><img src="images/icons-png/bars-black.png"</a>
         <a href="#help" class="ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-info ui-btn-icon-right ui-alt-icon ui-nodisc-icon ui-btn-right ui-btn">Help</a>
+        <h2>FIELD DATA SHEET</h2>
     </div>
 	<div role="main" class="ui-content">
-        <div id="cardhead" class="ui-field-contain">
-				<label for "place-field" class="select">Your Location
-				<select name="place-field" id="place-field" data-inline="true" onchange="newPlace()">
-				<!-- <option selected value="GPS">Automatic</option> -->
-				<!-- onblur="fillName(this.id);"> -->
-			</label>
-            <label for "recycle">
-            <input type=number class="right25" id="recycle">
-                Pounds of Recycling Collected:
-            </label>
-            <label for "trash">
-            <input type=number class="right25" id="trash">
-                Pounds of Trash Collected:
-            </label>
-        </div>
         <form id="trashform">
 			<label for "latin">
 			<input id="latin" type=text class="right50" name="lat" value="">
@@ -88,6 +73,60 @@ $(document).bind('mobileinit',function(){
            <input type=text class="right50" id="name-in" placeholder="your name">
 				Your Name
            </label>
+			<label for "tinst-in">
+				<input type=text class="right50" id="tinst-in">Air Instrument ID
+			</label>
+			<label class="radio-inline" for="Frad1">
+				<input type=radio name="air1" value="F" id="Frad1" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad1">
+				<input type=radio name="air1" value="C" checked id="Crad1" data-role="none">
+					&degC</label>
+			<label for "air1-in">
+				<input type=number class="right25" id="air1-in">Air Temperature
+			</label>
+			<label class="radio-inline" for="Frad2">
+				<input type=radio name="air1" value="F" id="Frad2" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad2">
+				<input type=radio name="air1" value="C" checked id="Crad2" data-role="none">
+					&degC</label>
+			<label for "air2-in">
+				<input type=number class="right25" id="air2-in">Replicate
+			</label>
+
+			<label for "winst-in">
+				<input type=text class="right50" id="winst-in">H2O Instrument ID
+			</label>
+			<label class="radio-inline" for="Frad3">
+				<input type=radio name="air1" value="F" id="Frad3" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad3">
+				<input type=radio name="air1" value="C" checked id="Crad3" data-role="none">
+					&degC</label>
+			<label for "air3-in">
+				<input type=number class="right25" id="air3-in">H2O Temperature
+			</label>
+			<label class="radio-inline" for="Frad4">
+				<input type=radio name="air1" value="F" id="Frad4" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad4">
+				<input type=radio name="air1" value="C" checked id="Crad4" data-role="none">
+					&degC</label>
+			<label for "air4-in">
+				<input type=number class="right25" id="air4-in">Replicate
+			</label>
+			
+			<label for "phinst-in">
+				<input type=text class="right50" id="phinst-in">pH Instrument ID
+			</label>
+			<label for "ph1-in">
+				<input type=number class="right25" id="ph1-in">pH
+			</label>
+			<label for "ph2-in">
+				<input type=number class="right25" id="ph1-in">Replicate
+			</label>
+
             <div id="formData"></div><p></p>
                 <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
         </form>
