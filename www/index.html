@@ -73,8 +73,8 @@ $(document).bind('mobileinit',function(){
            <input type=text class="right50" id="name-in" placeholder="your name">
 				Your Name
            </label>
-			<label for "tinst-in">
-				<input type=text class="right50" id="tinst-in">Air Instrument ID
+			<label for "tinst-in" class="invert">
+				<input type=text class="right50 invert" id="tinst-in">Air Instrument ID
 			</label>
 			<label class="radio-inline" for="Frad1">
 				<input type=radio name="air1" value="F" id="Frad1" data-role="none">
@@ -86,47 +86,137 @@ $(document).bind('mobileinit',function(){
 				<input type=number class="right25" id="air1-in">Air Temperature
 			</label>
 			<label class="radio-inline" for="Frad2">
-				<input type=radio name="air1" value="F" id="Frad2" data-role="none">
+				<input type=radio name="air2" value="F" id="Frad2" data-role="none">
 					&degF</label>
 			<label class="radio-inline" for="Crad2">
-				<input type=radio name="air1" value="C" checked id="Crad2" data-role="none">
+				<input type=radio name="air2" value="C" checked id="Crad2" data-role="none">
 					&degC</label>
 			<label for "air2-in">
 				<input type=number class="right25" id="air2-in">Replicate
 			</label>
 
-			<label for "winst-in">
-				<input type=text class="right50" id="winst-in">H2O Instrument ID
+			<label for "winst-in" class="invert">
+				<input type=text class="right50 invert" id="winst-in">H2O Instrument ID
 			</label>
 			<label class="radio-inline" for="Frad3">
-				<input type=radio name="air1" value="F" id="Frad3" data-role="none">
+				<input type=radio name="wat1" value="F" id="Frad3" data-role="none">
 					&degF</label>
 			<label class="radio-inline" for="Crad3">
-				<input type=radio name="air1" value="C" checked id="Crad3" data-role="none">
+				<input type=radio name="wat1" value="C" checked id="Crad3" data-role="none">
 					&degC</label>
 			<label for "air3-in">
 				<input type=number class="right25" id="air3-in">H2O Temperature
 			</label>
 			<label class="radio-inline" for="Frad4">
-				<input type=radio name="air1" value="F" id="Frad4" data-role="none">
+				<input type=radio name="wat2" value="F" id="Frad4" data-role="none">
 					&degF</label>
 			<label class="radio-inline" for="Crad4">
-				<input type=radio name="air1" value="C" checked id="Crad4" data-role="none">
+				<input type=radio name="wat2" value="C" checked id="Crad4" data-role="none">
 					&degC</label>
 			<label for "air4-in">
 				<input type=number class="right25" id="air4-in">Replicate
 			</label>
 			
-			<label for "phinst-in">
-				<input type=text class="right50" id="phinst-in">pH Instrument ID
+			<label for "phinst-in" class="invert">
+				<input type=text class="right50 invert" id="phinst-in">pH Instrument ID
 			</label>
 			<label for "ph1-in">
 				<input type=number class="right25" id="ph1-in">pH
 			</label>
 			<label for "ph2-in">
-				<input type=number class="right25" id="ph1-in">Replicate
+				<input type=number class="right25" id="ph2-in">Replicate
 			</label>
 
+			<label for "doinst-in" class="invert">
+				<input type=text class="right50 invert" id="doinst-in">Disolved Oxygen ID
+			</label>
+			<label for "do1-in">
+				<input type=number class="right25" id="do1-in">Disolved Oxygen
+			</label>
+			<label for "do2-in">
+				<input type=number class="right25" id="do2-in">Replicate
+			</label>
+
+			<label for "cond-in" class="invert">
+				<input type=text class="right50 invert" id="cond-in">Conductivity ID
+			</label>
+			<label for "co1-in">
+				<input type=number class="right25" id="co1-in">Conductivity
+			</label>
+			<label for "co2-in">
+				<input type=number class="right25" id="co2-in">Replicate
+			</label>
+
+			<label for "turb-in" class="invert">
+				<input type=text class="right50 invert" id="turb-in">Turbidity ID
+			</label>
+			<label for "tu1-in">
+				<input type=number class="right25" id="tu1-in">Turbidity
+			</label>
+			<label for "tu2-in">
+				<input type=number class="right25" id="tu2-in">Replicate
+			</label>
+
+			<label for "trans-in" class="invert">
+				<input type=text class="right50 invert" id="trans-in">Transparency ID
+			</label>
+			<label for "tr1-in">
+				<input type=number class="right25" id="tr1-in">Transparency
+			</label>
+			<label for "tr2-in">
+				<input type=number class="right25" id="tr2-in">Replicate
+			</label>
+
+			<table> <tr><td style="width:100%">Flow Discharge</td><td>
+				<select name="flow-in" id="flow-in" data-inline="true">
+					<option value="Stagnant">Stagnant</option>
+					<option value="Trickle">Trickle</option>
+					<option value="Moderate">Moderate</option>
+					<option value="High">High</option>
+				</select>		
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Clarity</td><td>
+				<select name="clarity-in" id="clarity-in" data-inline="true">
+					<option value="Clear">Clear</option>
+					<option value="Murky">Murky</option>
+					<option value="Cloudy">Cloudy</option>
+				</select>
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Sky</td><td>
+				<select name="sky-in" id="sky-in" data-inline="true">
+					<option value="NoClouds">No Clouds</option>
+					<option value="PartCloud">Partly Cloudy</option>
+					<option value="HeavyCloud">Heavy Clouds</option>
+					<option value="Overcast">Overcast</option>
+				</select>
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Precipitation</td><td>
+				<select name="precip-in" id="precip-in" data-inline="true">
+					<option value="None">None</option>
+					<option value="Foggy">Foggy</option>
+					<option value="Misty">Misty</option>
+					<option value="Rain">Rain</option>
+				</select>
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Wind</td><td>
+				<select name="wind-in" id="wind-in" data-inline="true">
+					<option value="None">None</option>
+					<option value="Breezy">Breezy</option>
+					<option value="Windy">Windy</option>
+					<option value="Blustery">Blustery</option>
+				</select>
+			</td></tr></table>
+
+           <label for "fish-in">
+           <input type=text class="right50" id="fish-in">Fish or Wildlife</label>
+ 
+           <label for "notes-in">
+           <input type=text class="right50" id="notes-in">Notes</label>
+ 
             <div id="formData"></div><p></p>
                 <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
         </form>

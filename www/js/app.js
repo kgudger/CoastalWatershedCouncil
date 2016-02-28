@@ -62,10 +62,16 @@ function ready() {
 		console.warn("Geolocation failed. \nPlease enable GPS in Settings.", 1);
 		defaultPosition();
 	}
-	$('#date-field').datepick({dateFormat: 'yyyy-mm-dd',
+ 	$('#date-field').datepick({dateFormat: 'yyyy-mm-dd',
 		onClose: function(dates) { setDate(dates); }
 	});
 	$('#arrive-field').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+	setupDate();
+}
+	/**
+	 * date setup
+	 */
+function setupDate() {
 	var currentDate = new Date()
 	var day = currentDate.getDate()
 	var month = currentDate.getMonth() + 1
@@ -80,7 +86,8 @@ function ready() {
     var out = document.getElementById("datein");
     var dout = document.getElementById("date-field");
     out.value = dout.value = ndate ;
-}
+} // setupDate
+
 	/**
 	 *	set date function for date field
 	 */
@@ -102,13 +109,19 @@ function showPosition(position) {
 //	console.log('In showPosition');
     currentLatitude = position.coords.latitude;
 	currentLongitude = position.coords.longitude;
+	setupPosition();
+};
+
+/**
+ * set up location position
+ */
+function setupPosition() {
     var latid = document.getElementById("latin");
     var lonid = document.getElementById("lonin");
     latid.value = currentLatitude;
     lonid.value = currentLongitude;
-    console.log("Lat is " + latid.value + " Lon is " + lonid.value);
-};
-
+    console.log("Lat is " + latid.value + " Lon is " + lonid.value);	
+}
 /** 
  *	on fail from ready, default position
  */
@@ -160,7 +173,11 @@ function sendData() {
         sendfunc(queryString);
 //    alert(queryString);
         document.getElementById("trashform").reset()
-    }
+        setupDate();
+		setupPosition();
+		var ele = document.getElementById('dataCard');
+		window.scrollTo(ele.offsetLeft,ele.offsetTop);
+   }
 }
 
 /**

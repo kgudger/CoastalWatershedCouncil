@@ -154,3 +154,19 @@ input.radio {
 h2 {
 	text-overflow: clip !important;
 }
+.invert {
+  color: #ffffff !important;
+  background-color: #444 !important;
+}
+.select {
+	float: right;
+	clear: none;
+	display: block;
+	padding: 2px 1em 0 0;
+	width: 50% !important;
+
+}
+.containter {
+	overflow:hidden;
+	width: 100%'
+}
