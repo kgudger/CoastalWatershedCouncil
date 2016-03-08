@@ -166,7 +166,20 @@ h2 {
 	width: 50% !important;
 
 }
-.containter {
+/*.containter {
 	overflow:hidden;
-	width: 100%'
+	width: 100%';
+}*/
+
+.fieldborder {
+	border-width: 1 !important;
+	border-color: #444;
 }
+
+label.radio-inleft {
+  float: left;
+  clear: none;
+  display: block;
+  padding: 2px 1em 0 0;
+}
+

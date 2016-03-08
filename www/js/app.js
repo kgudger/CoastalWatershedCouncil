@@ -66,6 +66,19 @@ function ready() {
 		onClose: function(dates) { setDate(dates); }
 	});
 	$('#arrive-field').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+	$('#collect-field').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+ 	$('#date-field2').datepick({dateFormat: 'yyyy-mm-dd',
+		onClose: function(dates) { setDate(dates); }
+	});
+	$('#arrive-field2').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+	$('#depart-field2').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+	$('#rtime-field2').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+ 	$('#date-field3').datepick({dateFormat: 'yyyy-mm-dd',
+		onClose: function(dates) { setDate(dates); }
+	});
+	$('#arrive-field3').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+	$('#sample-field3').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+	
 	setupDate();
 }
 	/**
@@ -86,6 +99,12 @@ function setupDate() {
     var out = document.getElementById("datein");
     var dout = document.getElementById("date-field");
     out.value = dout.value = ndate ;
+	out = document.getElementById("datein2");
+    dout = document.getElementById("date-field2");
+    out.value = dout.value = ndate ;
+	out = document.getElementById("datein3");
+    dout = document.getElementById("date-field3");
+    out.value = dout.value = ndate ;
 } // setupDate
 
 	/**
@@ -93,12 +112,14 @@ function setupDate() {
 	 */
 	function setDate(dates) {
         var out = document.getElementById("datein");
+        var out2 = document.getElementById("datein2");
+        var out3 = document.getElementById("datein3");
 		var selected = ''; 
 		for (var i = 0; i < dates.length; i++) { 
 			selected += ',' + $.datepick.formatDate('yyyy-mm-dd',dates[i]); 
 		} 
 //		alert('Selected dates are: ' + selected.substring(1)); 
-        out.value = selected.substring(1) ;
+        out.value = out2.value = out3.value = selected.substring(1) ;
     }
 
 
@@ -120,7 +141,15 @@ function setupPosition() {
     var lonid = document.getElementById("lonin");
     latid.value = currentLatitude;
     lonid.value = currentLongitude;
-    console.log("Lat is " + latid.value + " Lon is " + lonid.value);	
+	latid = document.getElementById("latin2");
+    lonid = document.getElementById("lonin2");
+    latid.value = currentLatitude;
+    lonid.value = currentLongitude;
+	latid = document.getElementById("latin3");
+    lonid = document.getElementById("lonin3");
+    latid.value = currentLatitude;
+    lonid.value = currentLongitude;
+   console.log("Lat is " + latid.value + " Lon is " + lonid.value);	
 }
 /** 
  *	on fail from ready, default position
