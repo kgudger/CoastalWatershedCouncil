@@ -55,13 +55,13 @@ $(document).bind('mobileinit',function(){
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#fragment-1" class="ui-btn-active">Snapshot Day</a></li>
-					<li><a href="#fragment-2">First Flulsh</a></li>
+					<!-- <li><a href="#fragment-2">First Flush</a></li> -->
 					<li><a href="#fragment-3">Urban Watch</a></li>
 				</ul>
 			</div>
 		<div id="fragment-1">
         <h2>FIELD DATA SHEET</h2>
-        <form id="trashform">
+        <form id="fielddataform">
 			<label for "latin">
 			<input id="latin" type=text class="right50" name="lat" value="">
 				Latitude</label>
@@ -75,23 +75,121 @@ $(document).bind('mobileinit',function(){
 <!--            <label for "arrive-field">
             <input type=text class="right50" id="arrive-field">
                 Arrival Time</label> -->
-           <p>Arrival time: <input type="text" class = "right50" id="arrive-field" data-role="none" size="20"></p>
+           <p>Arrival time: <input type="time" class = "right50" id="arrive-field" data-role="none" size="20"></p>
            <label for "site-name">
-           <input type=text class="right50" id="site-name">Site Location</label>
+           <input type=text class="right50" id="site-name">Site Name</label>
            <label for "site-id">
            <input type=text class="right50" id="site-id">Site ID</label>
-           <label for "water-name">
+<!--           <label for "water-name">
            <input type=text class="right50" id="water-name">Water/body Name</label>
            <label for "monitor-id">
-           <input type=text class="right50" id="monitor-id">Monitoring Kit ID</label>
+           <input type=text class="right50" id="monitor-id">Monitoring Kit ID</label> -->
            <label for "name-in">
            <input type=text class="right50" id="name-in" placeholder="your name">
 				Your Name
            </label>
            <label for "team-in">
-           <input type=text class="right50" id="team-in">Team Member Names</label>
-			<div id="PhysicalHabitat"class="invert">Physical Habitat</div>
+           <input type="textarea" rows="4" cols="20" class="right50" id="team-in">Team Member Names</label>
 
+			<fieldset class="fieldborder">
+			<legend class="invert">Sample 1</legend>
+				<label for "anal1_in">
+				<input type="text" class="right50" id="anal1_in">Analyte Type</label>
+				<label for "colname1_in">
+				<input type="text" class="right50" id="colname1_in">Collector Name</label>
+				<label for "notes1_in">
+				<input type="text" class="right50" id="notes1_in">Notes</label>
+				<label for "tcoll1_in">Time Collected
+				<input type="time" class="right50" id="tcoll1_in" data-role="none" size="20">
+				</label>
+			</fieldset>
+			<fieldset class="fieldborder">
+			<legend class="invert">Sample 2</legend>
+				<label for "anal2_in">
+				<input type="text" class="right50" id="anal2_in">Analyte Type</label>
+				<label for "colname2_in">
+				<input type="text" class="right50" id="colname2_in">Collector Name</label>
+				<label for "notes2_in">
+				<input type="text" class="right50" id="notes2_in">Notes</label>
+				<label for "tcoll2_in">Time Collected
+				<input type="time" class="right50" id="tcoll2_in" data-role="none" size="20">
+				</label>
+			</fieldset>
+			<fieldset class="fieldborder">
+			<legend class="invert">Sample 3</legend>
+				<label for "anal3_in">
+				<input type="text" class="right50" id="anal3_in">Analyte Type</label>
+				<label for "colname3_in">
+				<input type="text" class="right50" id="colname3_in">Collector Name</label>
+				<label for "notes3_in">
+				<input type="text" class="right50" id="notes3_in">Notes</label>
+				<label for "tcoll3_in">Time Collected
+				<input type="time" class="right50" id="tcoll3_in" data-role="none" size="20">
+				</label>
+			</fieldset>
+<p></p>
+			<fieldset class="fieldborder">
+			<legend class="invert">Field Measurements</legend>
+			<label class="radio-inline" for="Frad1">
+				<input type="radio" name="air1" value="F" id="Frad1" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad1">
+				<input type="radio" name="air1" value="C" checked id="Crad1" data-role="none">
+					&degC</label>
+			<label for "air1-in">
+				<input type="number" class="right25" id="air1-in">Air Temperature
+			</label>
+			<label for "tinst-in">
+				<input type="text" class="right50" id="tinst-in">Air Instrument ID
+			</label>
+			
+			<label class="radio-inline" for="Frad3">
+				<input type=radio name="wat1" value="F" id="Frad3" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad3">
+				<input type=radio name="wat1" value="C" checked id="Crad3" data-role="none">
+					&degC </label>
+			<label for "watr3-in">
+				<input type=number class="right25" id="watr3-in">H2O Temperature
+			</label>
+			<label for "winst-in">
+				<input type=text class="right50" id="winst-in">H2O Instrument ID
+			</label>
+			
+			<label for "ph1-in">
+				<input type=number class="right25" id="ph1-in">pH
+			</label>
+			<label for "phinst-in">
+				<input type=text class="right50" id="phinst-in">pH Instrument ID
+			</label>
+
+			<label for "do1-in">
+				<input type=number class="right25" id="do1-in">Disolved Oxygen
+			</label>
+			<label for "doinst-in">
+				<input type=text class="right50" id="doinst-in">DO Instrument ID
+			</label>
+
+			<label for "tr1-in">
+				<input type=number class="right25" id="tr1-in">Transparency
+			</label>
+			<label for "trinst-in">
+				<input type=text class="right50" id="trinst-in">Trans. Instr. ID
+			</label>
+			<label for "co1-in">
+				<input type=number class="right25" id="co1-in">Conductivity
+			</label>
+			<label for "cinst-in">
+				<input type=text class="right50" id="cinst-in">Cond. Instr. ID
+			</label>
+
+<!--			<label for "tu1-in">
+				<input type=number class="right25" id="tu1-in">Turbidity
+			</label> -->
+
+			</fieldset>
+			<p></p>
+			<div id="PhysicalHabitat"class="invert">Physical Habitat</div>
 			<table> <tr><td style="width:100%">Flow Discharge</td><td>
 				<select name="flow-in" id="flow-in" data-inline="true">
 					<option value="Stagnant">Stagnant</option>
@@ -136,57 +234,6 @@ $(document).bind('mobileinit',function(){
 				</select>
 			</td></tr></table>
 
-			<label for "tinst-in" class="invert">
-				<input type=text class="right50 invert" id="tinst-in">Air Instrument ID
-			</label>
-			<label class="radio-inline" for="Frad1">
-				<input type=radio name="air1" value="F" id="Frad1" data-role="none">
-					&degF</label>
-			<label class="radio-inline" for="Crad1">
-				<input type=radio name="air1" value="C" checked id="Crad1" data-role="none">
-					&degC</label>
-			<label for "air1-in">
-				<input type=number class="right25" id="air1-in">Air Temperature
-			</label>
-			<label class="radio-inline" for="Frad2">
-				<input type=radio name="air2" value="F" id="Frad2" data-role="none">
-					&degF</label>
-			<label class="radio-inline" for="Crad2">
-				<input type=radio name="air2" value="C" checked id="Crad2" data-role="none">
-					&degC</label>
-			<label for "air2-in">
-				<input type=number class="right25" id="air2-in">Replicate
-			</label>
-
-			<label class="radio-inline" for="Frad3">
-				<input type=radio name="wat1" value="F" id="Frad3" data-role="none">
-					&degF</label>
-			<label class="radio-inline" for="Crad3">
-				<input type=radio name="wat1" value="C" checked id="Crad3" data-role="none">
-					&degC </label>
-			<label for "air3-in">
-				<input type=number class="right25" id="air3-in">H2O Temperature
-			</label>
-			
-			<label for "ph1-in">
-				<input type=number class="right25" id="ph1-in">pH
-			</label>
-
-			<label for "do1-in">
-				<input type=number class="right25" id="do1-in">Disolved Oxygen
-			</label>
-
-			<label for "co1-in">
-				<input type=number class="right25" id="co1-in">Conductivity
-			</label>
-
-			<label for "tu1-in">
-				<input type=number class="right25" id="tu1-in">Turbidity
-			</label>
-
-			<label for "tr1-in">
-				<input type=number class="right25" id="tr1-in">Transparency
-			</label>
 
            <label for "fish-in">
            <input type=text class="right50" id="fish-in">Fish or Wildlife</label>
@@ -206,7 +253,7 @@ $(document).bind('mobileinit',function(){
                 <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
         </form>
         </div>
-		<div id="fragment-2">
+<!--		<div id="fragment-2">
         <h2>FIRST FLUSH DATA SHEET</h2>
         <form id="trashform2">
 			<input id="latin2" type=hidden class="right50" name="lat" value="">
@@ -457,7 +504,7 @@ $(document).bind('mobileinit',function(){
             <div id="formData2"></div><p></p>
                 <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
         </form>
-        </div>
+        </div> -->
 		<div id="fragment-3">
         <h2>URBAN WATCH DATA SHEET</h2>
         <form id="trashform3">

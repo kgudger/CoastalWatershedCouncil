@@ -5,16 +5,16 @@
  *	Purpose:  contains all of the javascript for the index file
  *
  * @author Keith Gudger
- * @copyright  (c) 2015, Keith Gudger, all rights reserved
+ * @copyright  (c) 2016, Keith Gudger, all rights reserved
  * @license    http://opensource.org/licenses/BSD-2-Clause
  * @version    Release: 1.0
- * @package    SaveOurShores
+ * @package    CoastalWatershedCouncil
  *
  */
 	var currentLatitude = 0;
 	var currentLongitude = 0;
 	var options = {			// Intel GPS options
-        timeout: 5000,
+        timeout: 10000,
         maximumAge: 20000,
         enableHighAccuracy: true
 	};
@@ -46,7 +46,7 @@ document.addEventListener("app.Ready", onAppReady, false) ;
  */
 function ready() {
     if (navigator.geolocation) {
-		var location_timeout = setTimeout("defaultPosition()", 2000);
+		var location_timeout = setTimeout("defaultPosition()", 10000);
 		// changed to 2 seconds 
         navigator.geolocation.getCurrentPosition(
 			function(pos) { clearTimeout(location_timeout); showPosition(pos); },
@@ -78,6 +78,10 @@ function ready() {
 	});
 	$('#arrive-field3').timeEntry({spinnerImage: './images/spinnerDefault.png'});
 	$('#sample-field3').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+
+	$('#tcoll1_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+	$('#tcoll2_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+	$('#tcoll3_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
 	
 	setupDate();
 }
@@ -99,9 +103,9 @@ function setupDate() {
     var out = document.getElementById("datein");
     var dout = document.getElementById("date-field");
     out.value = dout.value = ndate ;
-	out = document.getElementById("datein2");
+/*	out = document.getElementById("datein2");
     dout = document.getElementById("date-field2");
-    out.value = dout.value = ndate ;
+    out.value = dout.value = ndate ;*/
 	out = document.getElementById("datein3");
     dout = document.getElementById("date-field3");
     out.value = dout.value = ndate ;
@@ -128,8 +132,10 @@ function setupDate() {
  */
 function showPosition(position) {
 //	console.log('In showPosition');
-    currentLatitude = position.coords.latitude;
-	currentLongitude = position.coords.longitude;
+	if ( position ) {
+		currentLatitude = position.coords.latitude;
+		currentLongitude = position.coords.longitude;
+	}
 	setupPosition();
 };
 
@@ -141,10 +147,10 @@ function setupPosition() {
     var lonid = document.getElementById("lonin");
     latid.value = currentLatitude;
     lonid.value = currentLongitude;
-	latid = document.getElementById("latin2");
+/*	latid = document.getElementById("latin2");
     lonid = document.getElementById("lonin2");
     latid.value = currentLatitude;
-    lonid.value = currentLongitude;
+    lonid.value = currentLongitude;*/
 	latid = document.getElementById("latin3");
     lonid = document.getElementById("lonin3");
     latid.value = currentLatitude;
@@ -156,6 +162,7 @@ function setupPosition() {
  */
 function defaultPosition() {
 	console.log('In defaultPosition');
+	showPosition(null); 
 //	alert("defaultPosition");
 }
 
