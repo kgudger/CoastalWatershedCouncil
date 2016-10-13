@@ -193,22 +193,18 @@ function defaultPosition() {
         console.log("date is " + out.value);
     }
 /**
- *	onblur function for name field
+ *	sendData function, called when submit clicked
  */
 function sendData() {
     var out = document.getElementById("name-in").value;
-    var lati = document.getElementById("latin").value;
-//    alert("Location selection is " + place);
     if ( out == "" ) {
         alert("Please enter your name before submitting, thanks.");
-    } else if ( lati == "" ) {
-		alert("Please select a location before submitting, thanks.");
 	} else {
-        var queryString = $('#trashform').serialize();
+        var queryString = $('#fielddataform').serialize();
         queryString = "command=send&" + queryString;
         sendfunc(queryString);
 //    alert(queryString);
-        document.getElementById("trashform").reset()
+        document.getElementById("fielddataform").reset()
         setupDate();
 		setupPosition();
 		var ele = document.getElementById('dataCard');
@@ -239,7 +235,7 @@ function sendfunc(params) {
               }
           }
 	}
-	xmlhttp.open("GET","http://home.loosescre.ws/~keith/SOS/server.php" + '?' + params, true);
+	xmlhttp.open("GET","http://home.loosescre.ws/~keith/CWC/server.php" + '?' + params, true);
 //	xmlhttp.open("GET","http://www.saveourshores.org/server.php" + '?' + params, true);
 	xmlhttp.send(null);
     }

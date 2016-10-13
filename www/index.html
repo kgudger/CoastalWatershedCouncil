@@ -63,68 +63,68 @@ $(document).bind('mobileinit',function(){
         <h2>FIELD DATA SHEET</h2>
         <form id="fielddataform">
 			<label for "latin">
-			<input id="latin" type=text class="right50" name="lat" value="">
+			<input id="latin" type="text" class="right50" name="lat" value="">
 				Latitude</label>
 			<label for "lonin">
-			<input id="lonin" type=text class="right50" name="lon"  value="">
+			<input id="lonin" type="text" class="right50" name="lon"  value="">
 				Longitude</label>
 			<input id="datein" type="hidden" name="datein" value="">
             <label for "date-field">
-            <input type=text class="right50" id="date-field">
+            <input type="text" class="right50" id="date-field">
                 Date</label>
 <!--            <label for "arrive-field">
             <input type=text class="right50" id="arrive-field">
                 Arrival Time</label> -->
-           <p>Arrival time: <input type="time" class = "right50" id="arrive-field" data-role="none" size="20"></p>
+           <p>Arrival time: <input type="time" class = "right50" id="arrive-field" data-role="none" size="20" name="time-in"></p>
            <label for "site-name">
-           <input type=text class="right50" id="site-name">Site Name</label>
+           <input type="text" class="right50" id="site-name" name="site-in">Site Name</label>
            <label for "site-id">
-           <input type=text class="right50" id="site-id">Site ID</label>
+           <input type="text" class="right50" id="site-id" name="siteid-in">Site ID</label>
 <!--           <label for "water-name">
            <input type=text class="right50" id="water-name">Water/body Name</label>
            <label for "monitor-id">
            <input type=text class="right50" id="monitor-id">Monitoring Kit ID</label> -->
            <label for "name-in">
-           <input type=text class="right50" id="name-in" placeholder="your name">
+           <input type="text" class="right50" id="name-in" name="namein" placeholder="your name">
 				Your Name
            </label>
            <label for "team-in">
-           <input type="textarea" rows="4" cols="20" class="right50" id="team-in">Team Member Names</label>
+           <input type="textarea" rows="4" cols="20" class="right50" name="team-in" id="team-in">Team Member Names</label>
 
 			<fieldset class="fieldborder">
 			<legend class="invert">Sample 1</legend>
 				<label for "anal1_in">
-				<input type="text" class="right50" id="anal1_in">Analyte Type</label>
+				<input type="text" class="right50" id="anal1_in" name="anal1-in">Analyte Type</label>
 				<label for "colname1_in">
-				<input type="text" class="right50" id="colname1_in">Collector Name</label>
+				<input type="text" class="right50" id="colname1_in" name="coln1-in">Collector Name</label>
 				<label for "notes1_in">
-				<input type="text" class="right50" id="notes1_in">Notes</label>
+				<input type="text" class="right50" id="notes1_in" name="note1-in">Notes</label>
 				<label for "tcoll1_in">Time Collected
-				<input type="time" class="right50" id="tcoll1_in" data-role="none" size="20">
+				<input type="time" class="right50" id="tcoll1_in" name="tcol1-in" data-role="none" size="20">
 				</label>
 			</fieldset>
 			<fieldset class="fieldborder">
 			<legend class="invert">Sample 2</legend>
 				<label for "anal2_in">
-				<input type="text" class="right50" id="anal2_in">Analyte Type</label>
+				<input type="text" class="right50" id="anal2_in" name="anal2-in">Analyte Type</label>
 				<label for "colname2_in">
-				<input type="text" class="right50" id="colname2_in">Collector Name</label>
+				<input type="text" class="right50" id="colname2_in" name="coln2-in">Collector Name</label>
 				<label for "notes2_in">
-				<input type="text" class="right50" id="notes2_in">Notes</label>
+				<input type="text" class="right50" id="notes2_in" name="note2-in">Notes</label>
 				<label for "tcoll2_in">Time Collected
-				<input type="time" class="right50" id="tcoll2_in" data-role="none" size="20">
+				<input type="time" class="right50" id="tcoll2_in" name="tcol2-in" data-role="none" size="20">
 				</label>
 			</fieldset>
 			<fieldset class="fieldborder">
 			<legend class="invert">Sample 3</legend>
 				<label for "anal3_in">
-				<input type="text" class="right50" id="anal3_in">Analyte Type</label>
+				<input type="text" class="right50" id="anal3_in" name="anal3-in">Analyte Type</label>
 				<label for "colname3_in">
-				<input type="text" class="right50" id="colname3_in">Collector Name</label>
+				<input type="text" class="right50" id="colname3_in" name="coln3-in">Collector Name</label>
 				<label for "notes3_in">
-				<input type="text" class="right50" id="notes3_in">Notes</label>
+				<input type="text" class="right50" id="notes3_in" name="note3-in">Notes</label>
 				<label for "tcoll3_in">Time Collected
-				<input type="time" class="right50" id="tcoll3_in" data-role="none" size="20">
+				<input type="time" class="right50" id="tcoll3_in" name="tcol3-in" data-role="none" size="20">
 				</label>
 			</fieldset>
 <p></p>
@@ -137,50 +137,50 @@ $(document).bind('mobileinit',function(){
 				<input type="radio" name="air1" value="C" checked id="Crad1" data-role="none">
 					&degC</label>
 			<label for "air1-in">
-				<input type="number" class="right25" id="air1-in">Air Temperature
+				<input type="number" class="right25" id="air1-in" name="air1-in">Air Temperature
 			</label>
 			<label for "tinst-in">
-				<input type="text" class="right50" id="tinst-in">Air Instrument ID
+				<input type="text" class="right50" id="tinst-in" name="tinst-in">Air Instrument ID
 			</label>
 			
 			<label class="radio-inline" for="Frad3">
-				<input type=radio name="wat1" value="F" id="Frad3" data-role="none">
+				<input type="radio" name="wat1" value="F" id="Frad3" data-role="none">
 					&degF</label>
 			<label class="radio-inline" for="Crad3">
-				<input type=radio name="wat1" value="C" checked id="Crad3" data-role="none">
+				<input type="radio" name="wat1" value="C" checked id="Crad3" data-role="none">
 					&degC </label>
 			<label for "watr3-in">
-				<input type=number class="right25" id="watr3-in">H2O Temperature
+				<input type="number" class="right25" id="watr3-in" name="watr3-in">H2O Temperature
 			</label>
 			<label for "winst-in">
-				<input type=text class="right50" id="winst-in">H2O Instrument ID
+				<input type="text" class="right50" id="winst-in" name="winst-in">H2O Instrument ID
 			</label>
 			
 			<label for "ph1-in">
-				<input type=number class="right25" id="ph1-in">pH
+				<input type="number" class="right25" id="ph1-in" name="ph1-in">pH
 			</label>
 			<label for "phinst-in">
-				<input type=text class="right50" id="phinst-in">pH Instrument ID
+				<input type="text" class="right50" id="phinst-in" name="phinst-in">pH Instrument ID
 			</label>
 
 			<label for "do1-in">
-				<input type=number class="right25" id="do1-in">Disolved Oxygen
+				<input type="number" class="right25" id="do1-in" name="dol-in">Disolved Oxygen
 			</label>
 			<label for "doinst-in">
-				<input type=text class="right50" id="doinst-in">DO Instrument ID
+				<input type="text" class="right50" id="doinst-in" name="doinst-in">DO Instrument ID
 			</label>
 
 			<label for "tr1-in">
-				<input type=number class="right25" id="tr1-in">Transparency
+				<input type="number" class="right25" id="tr1-in" name="tr1-in">Transparency
 			</label>
 			<label for "trinst-in">
-				<input type=text class="right50" id="trinst-in">Trans. Instr. ID
+				<input type="text" class="right50" id="trinst-in" name="trinst-in">Trans. Instr. ID
 			</label>
 			<label for "co1-in">
-				<input type=number class="right25" id="co1-in">Conductivity
+				<input type="number" class="right25" id="co1-in" name="cond-in">Conductivity
 			</label>
 			<label for "cinst-in">
-				<input type=text class="right50" id="cinst-in">Cond. Instr. ID
+				<input type="text" class="right50" id="cinst-in" name="cinst-in">Cond. Instr. ID
 			</label>
 
 <!--			<label for "tu1-in">
@@ -189,7 +189,8 @@ $(document).bind('mobileinit',function(){
 
 			</fieldset>
 			<p></p>
-			<div id="PhysicalHabitat"class="invert">Physical Habitat</div>
+			<fieldset class="fieldborder">
+			<legend class="invert">Physical Observations</legend>
 			<table> <tr><td style="width:100%">Flow Discharge</td><td>
 				<select name="flow-in" id="flow-in" data-inline="true">
 					<option value="Stagnant">Stagnant</option>
@@ -236,11 +237,11 @@ $(document).bind('mobileinit',function(){
 
 
            <label for "fish-in">
-           <input type=text class="right50" id="fish-in">Fish or Wildlife</label>
+           <input type="textarea" class="right50" id="fish-in" name="fish-in">Fish or Wildlife</label>
  
            <label for "notes-in">
-           <input type=text class="right50" id="notes-in">Notes</label>
- 
+           <input type="textarea" class="right50" id="notes-in" name="notes-in">Notes</label>
+ <!--
            <label for "sample-id" class="invert">
            <input type=text class="right50 invert" id="sample-id">Sample ID</label>
  
@@ -248,7 +249,8 @@ $(document).bind('mobileinit',function(){
  
            <label for "type-in">
            <input type=text class="right50" id="type-in">Analyte/Type</label>
- 
+ -->
+			</fieldset>
             <div id="formData"></div><p></p>
                 <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
         </form>
