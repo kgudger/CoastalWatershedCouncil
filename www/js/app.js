@@ -199,6 +199,18 @@ function sendData() {
     var out = document.getElementById("name-in").value;
     if ( out == "" ) {
         alert("Please enter your name before submitting, thanks.");
+	} else if ( document.getElementById("name-in").value == "" )
+	{
+        alert("Please enter your name before submitting, thanks.");
+	} else if ( document.getElementById("site-name").value == "" )
+	{
+        alert("Please enter the site name before submitting, thanks.");
+	} else if ( document.getElementById("site-id").value == "" )
+	{
+        alert("Please enter the site id before submitting, thanks.");
+	} else if ( document.getElementById("arrive-field").value == "" )
+	{
+        alert("Please enter the arrival time before submitting, thanks.");
 	} else {
         var queryString = $('#fielddataform').serialize();
         queryString = "command=send&" + queryString;
