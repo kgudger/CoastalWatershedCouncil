@@ -1,0 +1,422 @@
+/* css Zen Garden submission 217 - 'Screen Filler', by Elliot Jay Stocks, http://elliotjaystocks.com/  */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+	
+	/* TYPEKIT_KIT_ID: lxq7gid */
+
+	/*
+	================================================
+	01	Sensible Defaults
+	02	Typography
+	03	Layout
+	04	Media Queries
+	================================================
+	*/
+
+	/* ---------------------------------------------------------------------------------------------------------- 
+	01 Sensible defaults ----------------------------------------------------------------------------------------
+	---------------------------------------------------------------------------------------------------------- */
+
+	.subbutton						{ font-weight:bold; 
+									padding:10px 15px 10px 15px;}
+
+	.loginbutton					{ font-weight:bold; 
+									padding:10px 15px 10px 15px;
+									position:absolute; right:0px;
+									}
+
+	* 								{ margin:0; padding:2px; /* So sue me */ }
+
+	div,
+	article,
+	section,
+	header,
+	footer,
+	nav,
+	figure,
+	li								{ position:relative; } /* For absolutely positioning elements within containers  */
+	.group:after 					{ display: block; height: 0; font-size: 0; content: "."; clear: both; visibility: hidden; } /* For clearing */
+	*								{ -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; } /* Apply a natural box layout model to all elements â€” see http://paulirish.com/2012/box-sizing-border-box-ftw */
+
+	::-moz-selection 				{ background:#333; color:#fff; }
+	::selection 					{ background:#333; color:#fff; }
+
+	/* ---------------------------------------------------------------------------------------------------------- 
+	02 Typography -----------------------------------------------------------------------------------------------
+	---------------------------------------------------------------------------------------------------------- */
+	/*
+
+	14 / 16	= 		0.875em 		(14px equivalent)
+	16 / 16	= 		1em 			(16px equivalent)
+	18 / 16 = 		1.125em 		(18px equivalent)
+	21 / 16 = 		1.3125em 		(21px equivalent)
+	24 / 16 = 		1.5em 			(24px equivalent)
+	30 / 16 = 		1.875em 		(30px equivalent)
+	36 / 16 = 		2.25em 			(36px equivalent)
+	48 / 16 = 		3em 			(48px equivalent)
+	60 / 16 = 		3.75em 			(60px equivalent)
+	72 / 16 = 		4.5em 			(72px equivalent)
+	96 / 16 = 		6em 			(96px equivalent)
+
+	*/
+
+	/* Rendering */
+	body,
+	input,
+	textarea 						{ color:#333; /*-webkit-font-smoothing:antialiased;*/ } 
+
+	/* Families */
+	body							{ font-family:"tablet-gothic", verdana, arial, sans-serif; /* Weights from Typekit: 300, 400 */ }
+	h2,
+	h3 								{ font-family:"tablet-gothic-condensed", "arial narrow", arial, verdana, sans-serif; /* Weights from Typekit: 200, 900 */ }
+
+	/* Headings */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 								{ font-weight:normal; }
+	h1 								{ background:#ea2e49; color:#fff;
+									 display:inline-block; margin-bottom:1em;
+									 padding:0.5em 1em; 
+									 position:relative; left:0px;
+									 }
+	h2 								{ color:#fff; font-weight:900; /* Heavy */ font-size:6em; letter-spacing:1px; line-height:1em; }
+	h3 								{ font-size:2.25em; font-weight:200; /* Thin */ letter-spacing:1px; line-height:1em; padding:0.5em 0 0.25em 0; }
+	h4 								{ font-size:1.75em; font-weight:200; /* Thin */ letter-spacing:1px; line-height:1em; padding:0.5em 0 0.25em 0; text-decoration:underline;}
+	h5 								{ font-size:1.0em; font-weight:200; /* Thin */ letter-spacing:1px; line-height:1em;  }
+
+	/* Links */
+	a 								{ border-bottom:1px solid rgba(0,0,0,0.2); color:#333; text-decoration:none; -moz-transition:border-color 0.2s ease-in-out; -ms-transition:border-color 0.2s ease-in-out; -o-transition:border-color 0.2s ease-in-out; -webkit-transition:border-color 0.2s ease-in-out; transition:border-color 0.2s ease-in-out; }
+	a:hover 						{ border-color:#ea2e49; }
+	section.intro div.summary p a,
+	div.explanation p a,
+	div.participation p a			{ color:#fff; }
+	div.participation p a:hover		{ border-color:#fff; }
+
+	/* Paragraph styles */
+	p,
+	li 								{ font-size:1em; font-weight:400; /* Regular */  padding:0.15em 0; }
+	h1,
+	section.intro div.summary p,
+	div.requirements p:last-child 	{ font-size:1.5em; font-weight:300; letter-spacing:2px; /*text-transform:uppercase;*/ }
+	section.intro div.summary p:last-child, 
+	div.requirements p:last-child 	{ border-top:1px solid #ea2e49; margin-top:1em; padding-top:1.5em; }
+
+	/* Other bits & bobs */
+	em,
+	strong 							{ font-style:normal; font-weight:400; }
+
+	/* ---------------------------------------------------------------------------------------------------------- 
+	03 Layout ---------------------------------------------------------------------------------------------------
+	---------------------------------------------------------------------------------------------------------- */
+
+	html 							{ background:#daede2; padding:5%; }
+	body 							{ background:#77c4d3; }
+	div.page-wrapper 				{ z-index:2; }
+
+	section.intro 					{ padding:5%; }
+	header.headstyle				{ width:100%}
+
+	section.intro div.summary 		{ color:#fff; padding:5% 0 0; }
+	section.intro div.preamble 		{ background:
+										rgba(218,237,226,0.9);
+ 									color:#333; padding:5% 5% 5% 10%;
+									width:100%;}
+	section.intro div.summary	a	{background-color:#3398AC;
+									color:#FFFFFF;
+									}
+
+	table.signup					{font-family:"Trebuchet MS", Arial, 									Helvetica, sans-serif;
+									width:100%;
+									}
+
+	table.signup td th				{font-size:1em;
+									border:1px solid #98bf21;
+									text-align:left;
+									padding:3px 7px 2px 17px;
+									}
+
+	table.signup td.labelcell 		{width: 80px;
+									text-align:right;
+									}
+
+	table.signup td.inputcell 		{width: 350px
+									}
+
+	table.volemail
+									{font-family:"Trebuchet MS", Arial, 									Helvetica, sans-serif;
+									width:100%;
+									border-collapse:collapse;
+									font-size:0.7em;
+									padding: 2px;
+									}
+	table.volemail td th
+									{font-size:0.5em;
+									border:1px solid #98bf21;
+									text-align:left;
+									padding:3px 7px 2px 17px;
+									}
+	table.volemail th
+									{font-size:0.6em;
+									padding-top:5px;
+									padding-bottom:4px;
+									background-color:#77c4d3;
+									color:#ffffff;
+									}
+	table.volemail tr.alt td
+									{font-size:0.5em;
+									color:#000000;
+									background-color:rgba(246,247,146,0.9);
+									}
+	table.volemail td.cent
+									{text-align:center;
+									}
+	table.volemail th.cent
+									{text-align:center;
+									}
+	table.volemail td.norm
+									{text-align:left;
+									padding:3px 7px 2px 17px;
+									}
+	table.volemail th.norm
+									{text-align:left;
+									padding:3px 7px 2px 17px;
+									}
+	table.volemail input.hlite		{ border: medium #FF0000 dotted;
+									}
+
+	div.participation h5.bold
+									{ background:#99061C; color:#ffffff;
+									padding:0px; border:0px; margin 0px;
+									width:60%;}
+
+	div.main 						{ padding:5%; }
+	section.intro aside.sidebar		{ background:rgba(246,247,146,0.9);
+ 									padding:5%; 
+									float:right;
+									width:25%
+									}	
+	section.intro aside.sidebar h3	{ text-align:right; 
+									  background:#77c4d3;}
+	section.intro aside.sidebar ul 	{ padding:0.5em 0 2em 0; }
+	section.intro aside.sidebar ul li
+						 			{ color:rgba(0,0,0,0.4); list-style:none;
+									margin:0; padding:0 0 0.825em 0; }
+
+	section.intro aside.sidebar p
+									{ text-align:right;
+									}
+
+	section.intro aside.sidebar input[type="text"]
+									{ width:100%; }
+
+	section.intro aside.sidebar input[type="password"]
+									{ width:100%; }
+
+
+	footer 							{ background:rgba(246,247,146,0.9);
+									 clear:both; color:#fff; padding:1em 5%;
+									 width:85%; 
+									}
+	footer a 						{ margin-right:0.5em; }
+
+	div.explanation 				{ color:#fff; padding:5%; }
+	div.participation 				{ background:rgba(234,46,73,0.9); color:#fff; padding:5%; }
+	div.benefits 					{ background:rgba(255,255,255,0.9); margin-top:10%; padding:5%; }
+	div.requirements 				{ background:rgba(255,255,255,0.9); padding:5%; }
+
+	/* ---------------------------------------------------------------------------------------------------------- 
+	04 Media queries (using a mobile-first approach) ------------------------------------------------------------
+	---------------------------------------------------------------------------------------------------------- */
+
+	/* 1 and up */	
+	@media screen and (min-width:1px) {
+
+		body 						{ font-size:85%; }
+
+	}
+
+
+	/* 550 and up */	
+	@media screen and (min-width:550px) {
+
+		h2 							{ font-size:6em; }
+		section.intro 				{ width:95%; }
+		div.extra1 					{ background:rgba(51,55,69,0.9); bottom:0; right:0; position:fixed; top:0; width:30%; z-index:1; }
+		div.explanation 			{ float:left; width:50%; }
+		div.participation 			{ float:left; width:67%; }
+		aside.sidebar 				{ position:relative; right:0;
+									  bottom:0;
+									  width:32.75%; }
+		div.benefits 				{ float:left; }
+		div.requirements 			{ float:left; }
+	}
+
+	/* 650 and up */	
+	@media screen and (min-width:650px) {
+
+		div.benefits 				{ margin-top:12%; width:30%; }
+		div.requirements 			{ width:69%; }
+
+	}
+
+	/* 700 and up */	
+	@media screen and (min-width:700px) {
+
+		body 						{ font-size:90%; }
+
+	}
+
+	/* 800 and up */	
+	@media screen and (min-width:800px) {
+
+		body 						{ font-size:100%; }
+
+	}
+
+	/* 900 and up */	
+	@media screen and (min-width:900px) {
+
+		body 						{ font-size:110%; }
+
+	}
+
+	/* 1500 and up */	
+	@media screen and (min-width:1500px) {
+
+		body 						{ font-size:125%; }
+
+	}
+
+	/* 1800 and up */	
+	@media screen and (min-width:1800px) {
+
+		body 						{ font-size:150%; }
+
+	}
+
+	/* 2100 and up */	
+	@media screen and (min-width:2100px) {
+
+		body 						{ font-size:175%; }
+
+	}
+
+
+	/* 2500 and up */	
+	@media screen and (min-width:2500px) {
+
+		body 						{ font-size:200%; }
+
+	}
+
+h2.formInfo
+{
+	text-align: left;
+	margin:0 0 0 0;
+	font-family: Tahoma, Arial, Verdana, sans-serif;
+	font-weight:normal;
+	font-size:20px;
+	position:relative;
+	left:20px;
+	top:0px;
+	letter-spacing: 1px;
+	line-height:150%;
+	color: #ffffff;
+}
+
+
+p.formInfo
+{
+	text-align: left;
+	margin:0 0 0 0;
+	font-family: Tahoma, Arial, Verdana, sans-serif;
+	font-weight:normal;
+	color: #000000;
+	font-size:12px;
+	position:relative;
+	left:20px;
+	top:0px;
+	color: #ffffff;
+}
+
+#formFields
+{
+	position: relative;
+	width: 100%;
+	background-color: #ffffff;
+	margin:0 0 0 0;
+
+}
+
+label.formFieldQuestion
+{
+	line-height:125%;
+	padding:0 4px 1px 0;
+	border:none;	
+	display:block;
+	font-size:95%;
+	font-weight:bold;
+}
+
+label.formFieldOption
+{
+	font-size:90%;
+	display:block;
+	line-height:1.0em;
+	margin:-19px 0 0 25px;
+	padding:4px 0 5px 0;
+	width:90%;
+}
+
+
+
+input.formFieldStyle
+{
+	display:block;
+	line-height:1.4em;
+	margin:8px 0 0 3px;
+	width:13px;
+	height:13px;
+}
+
+/* tooltip */
+a.info {
+	font-family: Tahoma, Arial, Sans-Serif;
+	text-decoration:none; 
+	position: relative;
+}
+
+a.info span {
+	position: relative;
+	display:none;
+}
+
+a.info:hover {
+	position: relative;
+	cursor:default;
+}
+
+a.info:hover .infobox {
+	font-weight: normal; 
+	display:block; 
+	position:absolute; 
+	top:20px;;
+	left:25px;
+	width:205px; 
+	height:70px; 
+	border: 1px solid #ccc; 
+	background:#f4f4f4 url(question.gif) no-repeat bottom right; 
+	color:#000; 
+	text-align:left; 
+	font-size:0.7em; 
+	padding-left:10px; 
+	padding-top:10px;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+}
+

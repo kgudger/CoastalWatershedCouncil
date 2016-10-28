@@ -60,7 +60,7 @@ function showContent($title, &$uid) {
 //<script src="js/app2.js"></script>     
 ?>
 <div class="preamble" id="CWC-preamble" role="article">
-<h3>Data Base Sort.</h3><p></p>
+<h3>Data Base Output.</h3><p></p>
 <?php
 	echo $this->formL->reportErrors();
 	echo $this->formL->start('POST', "", 'name="databasesort"');
@@ -68,7 +68,7 @@ function showContent($title, &$uid) {
 <fieldset>
 </fieldset>
 </form>
-<table><tr><th>Site ID</th><th>Site Name</th><th>Latitude</th>
+<table class="volemail"><tr><th>Site ID</th><th>Site Name</th><th>Latitude</th>
 <th>Longitude</th><th>Date</th><th>Time</th><th>Name</th><th>Team</th>
 <th>Air Temp</th><th>Air Inst ID</th><th>Water Temp</th><th>Water Inst ID </th>
 <th>pH</th><th>pH Inst ID</th><th>DO</th><th>DO Inst ID</th>
@@ -76,7 +76,7 @@ function showContent($title, &$uid) {
 <th>Cond Inst ID</th><th>Flow</th><th>Clarity</th><th>Sky</th>
 <th>Precipitation</th></tr>
 <?php
-$sql = "SELECT name, lat, lon, tdate, atime, site, siteid, teammates
+$sql = "SELECT name, lat, lon, tdate, atime, site, siteid, teammates, cid
 	FROM Collector" ;
 $result = $this->db->query($sql);
 while ( $row = $result->fetch(PDO::FETCH_ASSOC)) {
@@ -88,7 +88,34 @@ while ( $row = $result->fetch(PDO::FETCH_ASSOC)) {
 	echo "<td>" . $row['tdate'] . "</td>";
 	echo "<td>" . $row['atime'] . "</td>";
 	echo "<td>" . $row['name'] . "</td>";
+	$cid = $row['cid'];
 	echo "<td>" . $row['teammates'] . "</td>";
+	$sql = "SELECT item, value FROM `text-tally` AS TT, items 
+				WHERE items.iid = TT.iid AND TT.cid = $cid
+			UNION ALL 
+			SELECT item, value FROM `time-tally` AS IT, items 
+				WHERE items.iid = IT.iid  AND IT.cid = $cid
+			UNION ALL 
+			SELECT item, value FROM  `float-tally` AS FT, `items` 
+				WHERE items.iid = FT.iid  AND FT.cid = $cid" ;
+	$res2 = $this->db->query($sql) ;
+	$row2 = $res2->fetchAll(PDO::FETCH_GROUP | PDO::FETCH_UNIQUE) ;
+	echo "<td>" . $row2['Air_Temp']['value'] . $row2['CorF']['value'] . "</td>" ;
+	echo "<td>" . $row2['Air_Instrument_ID']['value'] . "</td>" ;
+	echo "<td>" . $row2['Water_Temp']['value']['value'] . $row2['WCorF']['value'] . "</td>" ;
+	echo "<td>" . $row2['Water_Instrument_ID']['value'] . "</td>" ;
+	echo "<td>" . $row2['pH']['value'] . "</td>" ;
+	echo "<td>" . $row2['pH_Instrument_ID']['value'] . "</td>" ;
+	echo "<td>" . $row2['Disolved_Oxygen']['value'] . "</td>" ;
+	echo "<td>" . $row2['DO_Instrument_ID']['value'] . "</td>" ;
+	echo "<td>" . $row2['Transparency']['value'] . "</td>" ;
+	echo "<td>" . $row2['Transparency_Instrument_ID']['value'] . "</td>" ;
+	echo "<td>" . $row2['Conductivity']['value'] . "</td>" ;
+	echo "<td>" . $row2['Conductivity_Instrument_ID']['value'] . "</td>" ;
+	echo "<td>" . $row2['Flow_Discharge']['value'] . "</td>" ;
+	echo "<td>" . $row2['Clarity']['value'] . "</td>" ;
+	echo "<td>" . $row2['Sky']['value'] . "</td>" ;
+	echo "<td>" . $row2['Precipitation']['value'] . "</td>" ;
 	echo "</tr>" ;
 }	
 echo "</table>" ;
