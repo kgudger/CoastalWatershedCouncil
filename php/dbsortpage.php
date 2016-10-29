@@ -102,7 +102,7 @@ while ( $row = $result->fetch(PDO::FETCH_ASSOC)) {
 	$row2 = $res2->fetchAll(PDO::FETCH_GROUP | PDO::FETCH_UNIQUE) ;
 	echo "<td>" . $row2['Air_Temp']['value'] . $row2['CorF']['value'] . "</td>" ;
 	echo "<td>" . $row2['Air_Instrument_ID']['value'] . "</td>" ;
-	echo "<td>" . $row2['Water_Temp']['value']['value'] . $row2['WCorF']['value'] . "</td>" ;
+	echo "<td>" . $row2['Water_Temp']['value'] . $row2['WCorF']['value'] . "</td>" ;
 	echo "<td>" . $row2['Water_Instrument_ID']['value'] . "</td>" ;
 	echo "<td>" . $row2['pH']['value'] . "</td>" ;
 	echo "<td>" . $row2['pH_Instrument_ID']['value'] . "</td>" ;

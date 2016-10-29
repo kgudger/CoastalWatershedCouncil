@@ -130,3 +130,56 @@ img.displaycenter {
 .button_wrap_inner {
 	text-align: center !important;
 }
+fieldset {
+  overflow: hidden
+}
+
+.inlinediv {
+  clear: none;
+}
+
+label.radio-inline {
+  float: right;
+  clear: none;
+  display: block;
+  padding: 2px 1em 0 0;
+}
+
+input[type=radio],
+input.radio {
+  float: right;
+  clear: none;
+  margin: 2px 0 0 2px;
+}
+h2 {
+	text-overflow: clip !important;
+}
+.invert {
+  color: #ffffff !important;
+  background-color: #444 !important;
+}
+.select {
+	float: right;
+	clear: none;
+	display: block;
+	padding: 2px 1em 0 0;
+	width: 50% !important;
+
+}
+/*.containter {
+	overflow:hidden;
+	width: 100%';
+}*/
+
+.fieldborder {
+	border-width: 1 !important;
+	border-color: #444;
+}
+
+label.radio-inleft {
+  float: left;
+  clear: none;
+  display: block;
+  padding: 2px 1em 0 0;
+}
+

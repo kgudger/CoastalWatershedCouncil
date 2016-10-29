@@ -47,30 +47,20 @@ $(document).bind('mobileinit',function(){
 <div data-role="page" id="dataCard" class="ui-responsive-panel">
 	<div data-role="header" class="kgheader">
 		<img src="images/logosmall.png" height = "40" border="0" class="displaycenter"></img>
-        <h2>FIELD DATA SHEET</h2>
         <a href="#info"><img src="images/icons-png/bars-black.png"</a>
         <a href="#help" class="ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-info ui-btn-icon-right ui-alt-icon ui-nodisc-icon ui-btn-right ui-btn">Help</a>
     </div>
 	<div role="main" class="ui-content">
-        <div id="cardhead" class="ui-field-contain">
-            <label for "name-field">
-            <input type=text class="right50" id="name-field" placeholder="your name" onblur="fillName(this.id);">
-            Group / Your Name
-            </label>
-				<label for "place-field" class="select">Your Location
-				<select name="place-field" id="place-field" data-inline="true" onchange="newPlace()">
-				<!-- <option selected value="GPS">Automatic</option> -->
-				<!-- onblur="fillName(this.id);"> -->
-			</label>
-            <label for "recycle">
-            <input type=number class="right25" id="recycle">
-                Pounds of Recycling Collected:
-            </label>
-            <label for "trash">
-            <input type=number class="right25" id="trash">
-                Pounds of Trash Collected:
-            </label>
-        </div>
+		<div data-role="tabs">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#fragment-1" class="ui-btn-active">Snapshot Day</a></li>
+					<li><a href="#fragment-2">First Flulsh</a></li>
+					<li><a href="#fragment-3">Urban Watch</a></li>
+				</ul>
+			</div>
+		<div id="fragment-1">
+        <h2>FIELD DATA SHEET</h2>
         <form id="trashform">
 			<label for "latin">
 			<input id="latin" type=text class="right50" name="lat" value="">
@@ -78,7 +68,6 @@ $(document).bind('mobileinit',function(){
 			<label for "lonin">
 			<input id="lonin" type=text class="right50" name="lon"  value="">
 				Longitude</label>
-			<input id="name-in" type="hidden" name="namein" value="">
 			<input id="datein" type="hidden" name="datein" value="">
             <label for "date-field">
             <input type=text class="right50" id="date-field">
@@ -87,11 +76,595 @@ $(document).bind('mobileinit',function(){
             <input type=text class="right50" id="arrive-field">
                 Arrival Time</label> -->
            <p>Arrival time: <input type="text" class = "right50" id="arrive-field" data-role="none" size="20"></p>
+           <label for "site-name">
+           <input type=text class="right50" id="site-name">Site Location</label>
+           <label for "site-id">
+           <input type=text class="right50" id="site-id">Site ID</label>
            <label for "water-name">
-            <input type=text class="right50" id="water-name">Water/body Name</label>
+           <input type=text class="right50" id="water-name">Water/body Name</label>
+           <label for "monitor-id">
+           <input type=text class="right50" id="monitor-id">Monitoring Kit ID</label>
+           <label for "name-in">
+           <input type=text class="right50" id="name-in" placeholder="your name">
+				Your Name
+           </label>
+           <label for "team-in">
+           <input type=text class="right50" id="team-in">Team Member Names</label>
+			<div id="PhysicalHabitat"class="invert">Physical Habitat</div>
+
+			<table> <tr><td style="width:100%">Flow Discharge</td><td>
+				<select name="flow-in" id="flow-in" data-inline="true">
+					<option value="Stagnant">Stagnant</option>
+					<option value="Trickle">Trickle</option>
+					<option value="Moderate">Moderate</option>
+					<option value="High">High</option>
+				</select>		
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Clarity</td><td>
+				<select name="clarity-in" id="clarity-in" data-inline="true">
+					<option value="Clear">Clear</option>
+					<option value="Murky">Murky</option>
+					<option value="Cloudy">Cloudy</option>
+				</select>
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Sky</td><td>
+				<select name="sky-in" id="sky-in" data-inline="true">
+					<option value="NoClouds">No Clouds</option>
+					<option value="PartCloud">Partly Cloudy</option>
+					<option value="HeavyCloud">Heavy Clouds</option>
+					<option value="Overcast">Overcast</option>
+				</select>
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Precipitation</td><td>
+				<select name="precip-in" id="precip-in" data-inline="true">
+					<option value="None">None</option>
+					<option value="Foggy">Foggy</option>
+					<option value="Misty">Misty</option>
+					<option value="Rain">Rain</option>
+				</select>
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Wind</td><td>
+				<select name="wind-in" id="wind-in" data-inline="true">
+					<option value="None">None</option>
+					<option value="Breezy">Breezy</option>
+					<option value="Windy">Windy</option>
+					<option value="Blustery">Blustery</option>
+				</select>
+			</td></tr></table>
+
+			<label for "tinst-in" class="invert">
+				<input type=text class="right50 invert" id="tinst-in">Air Instrument ID
+			</label>
+			<label class="radio-inline" for="Frad1">
+				<input type=radio name="air1" value="F" id="Frad1" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad1">
+				<input type=radio name="air1" value="C" checked id="Crad1" data-role="none">
+					&degC</label>
+			<label for "air1-in">
+				<input type=number class="right25" id="air1-in">Air Temperature
+			</label>
+			<label class="radio-inline" for="Frad2">
+				<input type=radio name="air2" value="F" id="Frad2" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad2">
+				<input type=radio name="air2" value="C" checked id="Crad2" data-role="none">
+					&degC</label>
+			<label for "air2-in">
+				<input type=number class="right25" id="air2-in">Replicate
+			</label>
+
+			<label class="radio-inline" for="Frad3">
+				<input type=radio name="wat1" value="F" id="Frad3" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad3">
+				<input type=radio name="wat1" value="C" checked id="Crad3" data-role="none">
+					&degC </label>
+			<label for "air3-in">
+				<input type=number class="right25" id="air3-in">H2O Temperature
+			</label>
+			
+			<label for "ph1-in">
+				<input type=number class="right25" id="ph1-in">pH
+			</label>
+
+			<label for "do1-in">
+				<input type=number class="right25" id="do1-in">Disolved Oxygen
+			</label>
+
+			<label for "co1-in">
+				<input type=number class="right25" id="co1-in">Conductivity
+			</label>
+
+			<label for "tu1-in">
+				<input type=number class="right25" id="tu1-in">Turbidity
+			</label>
+
+			<label for "tr1-in">
+				<input type=number class="right25" id="tr1-in">Transparency
+			</label>
+
+           <label for "fish-in">
+           <input type=text class="right50" id="fish-in">Fish or Wildlife</label>
+ 
+           <label for "notes-in">
+           <input type=text class="right50" id="notes-in">Notes</label>
+ 
+           <label for "sample-id" class="invert">
+           <input type=text class="right50 invert" id="sample-id">Sample ID</label>
+ 
+           <p>Time Collected<input type="text" class = "right50" id="collect-field" data-role="none" size="20"></p>
+ 
+           <label for "type-in">
+           <input type=text class="right50" id="type-in">Analyte/Type</label>
+ 
             <div id="formData"></div><p></p>
                 <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
         </form>
+        </div>
+		<div id="fragment-2">
+        <h2>FIRST FLUSH DATA SHEET</h2>
+        <form id="trashform2">
+			<input id="latin2" type=hidden class="right50" name="lat" value="">
+			<input id="lonin2" type=hidden class="right50" name="lon"  value="">
+			<input id="datein2" type="hidden" name="datein" value="">
+
+            <label for "date-field2">
+            <input type=text class="right50" id="date-field2">
+                Date</label>
+
+           <p>Arrival time<input type="text" class = "right50" id="arrive-field2" data-role="none" size="20"></p>
+           <p>Departure time<input type="text" class = "right50" id="depart-field2" data-role="none" size="20"></p>
+           <p>Time Rain Began<input type="text" class = "right50" id="rtime-field2" data-role="none" size="20"></p>
+
+           <label for "city-name2">
+           <input type=text class="right50" id="city-name2">City</label>
+
+			<label for "siteid2-in">
+				<input type=number class="right25" id="siteid2-in">Station/Site ID
+			</label>
+           <label for "staname2-in">
+           <input type=text class="right50" id="staname2-in">Station/Site Name</label>
+           <input type=text class="right50" id="name2-in" placeholder="your name">
+				Collector Name
+           </label>
+
+			<p class="invert">First Sample Series</p>
+			<p>Bacteria (in clear 100mL cont. w/ white cap.)</p>
+			<p>Urea (in thin frosted cont. w/ black cap.)</p>
+			<p>Nutrients/TSS/Metals (in 2L frosted plastic).</p>
+			<p>Urea, NH4,mycrosystin (in 100mL square Nalgene.)</p>
+
+			<label for "winst12-in" class="invert">
+				<input type=text class="right50 invert" id="winst12-in">H2O Instrument ID
+			</label>
+			<label class="radio-inline" for="Frad32">
+				<input type=radio name="wat12" value="F" id="Frad32" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad32">
+				<input type=radio name="wat12" value="C" checked id="Crad32" data-role="none">
+					&degC</label>
+			<label for "water12-in">
+				<input type=number class="right25" id="water12-in">H2O Temperature
+			</label>
+			<label class="radio-inline" for="Frad42">
+				<input type=radio name="wat122" value="F" id="Frad42" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad42">
+				<input type=radio name="wat122" value="C" checked id="Crad42" data-role="none">
+					&degC</label>
+			<label for "water122-in">
+				<input type=number class="right25" id="water122-in">Replicate
+			</label>
+			
+			<label for "ph12-in">
+				<input type=number class="right25" id="ph12-in">pH
+			</label>
+			<label for "co12-in">
+				<input type=number class="right25" id="co12-in">Conductivity
+			</label>
+			<label for "tr12-in">
+				<input type=number class="right25" id="tr12-in2">Transparency
+			</label>
+
+			<p class="invert">Second Sample Series</p>
+			<p>Field Measurements Only</p>
+			<label for "winst22-in" class="invert">
+				<input type=text class="right50 invert" id="winst22-in">H2O Instrument ID
+			</label>
+			<label class="radio-inline" for="Frad52">
+				<input type=radio name="wat22" value="F" id="Frad52" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad52">
+				<input type=radio name="wat22" value="C" checked id="Crad52" data-role="none">
+					&degC</label>
+			<label for "water22-in">
+				<input type=number class="right25" id="water22-in">H2O Temperature
+			</label>
+			<label class="radio-inline" for="Frad62">
+				<input type=radio name="wat222" value="F" id="Frad62" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad62">
+				<input type=radio name="wat222" value="C" checked id="Crad62" data-role="none">
+					&degC</label>
+			<label for "water222-in">
+				<input type=number class="right25" id="water222-in">Replicate
+			</label>
+			
+			<label for "ph22-in">
+				<input type=number class="right25" id="ph22-in">pH
+			</label>
+			<label for "co22-in">
+				<input type=number class="right25" id="co22-in">Conductivity
+			</label>
+			<label for "tr22-in">
+				<input type=number class="right25" id="tr22-in2">Transparency
+			</label>
+
+			<p class="invert">Third Sample Series</p>
+			<p>Bacteria (in clear 100mL cont. w/ white cap.)</p>
+			<p>Nutrients/TSS/Metals (in 2L frosted plastic).</p>
+
+			<label for "winst32-in" class="invert">
+				<input type=text class="right50 invert" id="winst32-in">H2O Instrument ID
+			</label>
+			<label class="radio-inline" for="Frad72">
+				<input type=radio name="wat321" value="F" id="Frad72" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad72">
+				<input type=radio name="wat321" value="C" checked id="Crad72" data-role="none">
+					&degC</label>
+					
+			<label for "water32-in">
+				<input type=number class="right25" id="water32-in">H2O Temperature
+			</label>
+			<label class="radio-inline" for="Frad82">
+				<input type=radio name="wat322" value="F" id="Frad82" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad82">
+				<input type=radio name="wat322" value="C" checked id="Crad82" data-role="none">
+					&degC</label>
+			<label for "water322-in">
+				<input type=number class="right25" id="water322-in">Replicate
+			</label>
+			
+			<label for "ph32-in">
+				<input type=number class="right25" id="ph32-in">pH
+			</label>
+			<label for "co32-in">
+				<input type=number class="right25" id="co32-in">Conductivity
+			</label>
+			<label for "tr32-in">
+				<input type=number class="right25" id="tr32-in2">Transparency
+			</label>
+
+			<p class="invert">Changes Over Time</p>
+			<fieldset class="fieldborder">
+			<legend>Murkiness</legend>
+			<label class="radio-inline" for="MurkYes31">
+				<input type=radio name="Murk31" value="Yes" id="MurkYes31" data-role="none">
+					Yes</label>
+			<label class="radio-inline" for="MurkNo31">
+				<input type=radio name="Murk31" value="No" checked id="MurkNo31" data-role="none">
+					No</label>
+			</fieldset>
+			<fieldset class="fieldborder">
+			<legend>Rain</legend>
+			<label class="radio-inline" for="RainYes31">
+				<input type=radio name="Rain31" value="Yes" id="RainYes31" data-role="none">
+					Yes</label>
+			<label class="radio-inline" for="RainNo31">
+				<input type=radio name="Rain31" value="No" checked id="RainNo31" data-role="none">
+					No</label>
+			</fieldset>
+			<fieldset class="fieldborder">
+			<legend>Trash</legend>
+			<label class="radio-inline" for="TrashYes31">
+				<input type=radio name="Trash31" value="Yes" id="TrashYes31" data-role="none">
+					Yes</label>
+			<label class="radio-inline" for="TrashNo31">
+				<input type=radio name="Trash31" value="No" checked id="TrashNo31" data-role="none">
+					No</label>
+			</fieldset>
+			<fieldset class="fieldborder">
+			<legend>Sewage</legend>
+			<label class="radio-inline" for="SewageYes31">
+				<input type=radio name="Sewage31" value="Yes" id="SewageYes31" data-role="none">
+					Yes</label>
+			<label class="radio-inline" for="SewageNo31">
+				<input type=radio name="Sewage31" value="No" checked id="SewageNo31" data-role="none">
+					No</label>
+			</fieldset>
+			<fieldset class="fieldborder">
+			<legend>Oil Sheen</legend>
+			<label class="radio-inline" for="OilYes31">
+				<input type=radio name="Oil31" value="Yes" id="OilYes31" data-role="none">
+					Yes</label>
+			<label class="radio-inline" for="OilNo31">
+				<input type=radio name="Oil31" value="No" checked id="OilNo31" data-role="none">
+					No</label>
+			</fieldset>
+			<fieldset class="fieldborder">
+			<legend>Bubbles/Scum</legend>
+			<label class="radio-inline" for="BubsYes31">
+				<input type=radio name="Bubs31" value="Yes" id="BubsYes31" data-role="none">
+					Yes</label>
+			<label class="radio-inline" for="BubsNo31">
+				<input type=radio name="Bubs31" value="No" checked id="BubsNo31" data-role="none">
+					No</label>
+			</fieldset>
+			
+			<fieldset class="fieldborder">
+			<legend>Conditions</legend>
+           			
+			<table> <tr><td style="width:100%">Flow Discharge</td><td>
+				<select name="flow-in" id="flow2-in" data-inline="true">
+					<option value="Stagnant">Stagnant</option>
+					<option value="Trickle">Trickle</option>
+					<option value="Moderate">Moderate</option>
+					<option value="High">High</option>
+				</select>		
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Sky</td><td>
+				<select name="sky-in" id="sky2-in" data-inline="true">
+					<option value="NoClouds">No Clouds</option>
+					<option value="PartCloud">Partly Cloudy</option>
+					<option value="HeavyCloud">Heavy Clouds</option>
+					<option value="Overcast">Overcast</option>
+				</select>
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Precipitation</td><td>
+				<select name="precip-in" id="precip2-in" data-inline="true">
+					<option value="None">None</option>
+					<option value="Foggy">Foggy</option>
+					<option value="Misty">Misty</option>
+					<option value="Rain">Rain</option>
+				</select>
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Wind</td><td>
+				<select name="wind-in" id="wind2-in" data-inline="true">
+					<option value="None">None</option>
+					<option value="Breezy">Breezy</option>
+					<option value="Windy">Windy</option>
+					<option value="Blustery">Blustery</option>
+				</select>
+			</td></tr></table>
+
+			<table> <tr><td style="width:100%">Water Clarity</td><td>
+				<select name="clarity-in" id="clarity2-in" data-inline="true">
+					<option value="Clear">Clear</option>
+					<option value="Murky">Murky</option>
+					<option value="Cloudy">Cloudy</option>
+				</select>
+			</td></tr></table>
+			</fieldset>
+
+			<fieldset class="fieldborder">
+			<legend>Team Member Names</legend>
+				<input type=text id="Team2-in" data-role="none" style="width:97%">
+			</fieldset>
+
+           <label for "notes2-in">
+           <input type=text class="right50" id="notes2-in">Notes</label>
+
+            <div id="formData2"></div><p></p>
+                <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
+        </form>
+        </div>
+		<div id="fragment-3">
+        <h2>URBAN WATCH DATA SHEET</h2>
+        <form id="trashform3">
+			<input id="latin3" type=hidden name="lat" value="">
+			<input id="lonin3" type=hidden name="lon" value="">
+			<input id="datein3" type="hidden" name="datein" value="">
+            <label for "date-field3">
+            <input type=text class="right50" id="date-field3">
+                Date</label>
+<!--            <label for "arrive-field">
+            <input type=text class="right50" id="arrive-field">
+                Arrival Time</label> -->
+           <p>Arrival time: <input type="text" class = "right50" id="arrive-field3" data-role="none" size="20"></p>
+           <label for "site-name3">
+           <input type=text class="right50" id="site-name3">Site Location</label>
+           <label for "site-id3">
+           <input type=text class="right50" id="site-id3">Sampling Site ID</label>
+           <label for "monkit-id3">
+           <input type=text class="right50" id="monkit-id3">Monitoring Kit ID</label>
+           <label for "program-id3">
+           <input type=text class="right50" id="program-id3">Program:</label>
+           <label for "name-in3">
+           <input type=text class="right50" id="name-in3" placeholder="your name">
+				Your Name
+           </label>
+			<fieldset class="fieldborder">
+			<legend>Rain in last 48 hrs?</legend>
+			<label for "Yes3">
+			<label class="radio-inline" for="RainYes3">
+				<input type=radio name="Rain483" value="Yes" id="RainYes3" data-role="none">
+					Yes</label>
+			<label class="radio-inline" for="RainNo3">
+				<input type=radio name="Rain483" value="No" checked id="RainNo3" data-role="none">
+					No</label>
+			If Yes, DO NOT Monitor</label>
+			</fieldset>
+
+           <label for "flow-in3">
+           <input type=text class="right50" id="flow-in3">Flow Depth(cm)</label>
+           <label for "wflow-in3">
+           <input type=text class="right50" id="wflow-in3">Wetted Flow Width(cm)</label>
+
+			<label for "tinst3-in" class="invert">
+				<input type=text class="right50 invert" id="tinst3-in">Air Instrument ID
+			</label>
+			<label class="radio-inline" for="Frad13">
+				<input type=radio name="air13" value="F" id="Frad13" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad13">
+				<input type=radio name="air13" value="C" checked id="Crad13" data-role="none">
+					&degC</label>
+			<label for "air13-in">
+				<input type=number class="right25" id="air13-in">Air Temperature
+			</label>
+			<label class="radio-inline" for="Frad23">
+				<input type=radio name="air23" value="F" id="Frad23" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad23">
+				<input type=radio name="air23" value="C" checked id="Crad23" data-role="none">
+					&degC</label>
+			<label for "air23-in">
+				<input type=number class="right25" id="air23-in">Replicate
+			</label>
+
+			<label class="radio-inline" for="Frad33">
+				<input type=radio name="wat13" value="F" id="Frad33" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad33">
+				<input type=radio name="wat13" value="C" checked id="Crad33" data-role="none">
+					&degC </label>
+			<label for "wat33-in">
+				<input type=number class="right25" id="wat33-in">H2O Temperature
+			</label>
+			<label class="radio-inline" for="Frad43">
+				<input type=radio name="wat23" value="F" id="Frad43" data-role="none">
+					&degF</label>
+			<label class="radio-inline" for="Crad43">
+				<input type=radio name="wat23" value="C" checked id="Crad43" data-role="none">
+					&degC </label>
+			<label for "wat43-in">
+				<input type=number class="right25" id="wat43-in">Replicate
+			</label>
+			
+			<label for "co13-in">
+				<input type=number class="right25" id="co13-in">Conductivity
+			</label>
+			<label for "co23-in">
+				<input type=number class="right25" id="co23-in">Replicate
+			</label>
+
+			<label for "tds13-in">
+				<input type=number class="right25" id="tds13-in">TDS
+			</label>
+			<label for "tds23-in">
+				<input type=number class="right25" id="tds23-in">Replicate
+			</label>
+
+			<label for "sal13-in">
+				<input type=number class="right25" id="sal13-in">Salinity
+			</label>
+			<label for "sal23-in">
+				<input type=number class="right25" id="sal23-in">Replicate
+			</label>
+
+			<label for "do13-in">
+				<input type=number class="right25" id="do13-in">Disolved Oxygen
+			</label>
+			<label for "do23-in">
+				<input type=number class="right25" id="do23-in">Replicate
+			</label>
+
+			<label for "ph13-in">
+				<input type=number class="right25" id="ph13-in">pH
+			</label>
+			<label for "ph23-in">
+				<input type=number class="right25" id="ph23-in">Replicate
+			</label>
+
+			<fieldset class="fieldborder">
+			<legend>Trash?</legend>
+			<label class="radio-inleft" for="trano3">
+				<input type=radio name="tra3" value="No" checked id="trano3" data-role="none">
+					No</label>
+			<label class="radio-inleft" for="trayes3">
+				<input type=radio name="tra3" value="Yes" id="trayes3" data-role="none">
+					Yes</label>
+<!--			<label>Trash?
+			</label> -->
+           <label for "tranote3-in">
+           <input type=text class="right50" id="tranote3-in" data-role="none">Notes</label>
+           </fieldset>
+
+			<fieldset class="fieldborder">
+			<legend>Sewage?</legend>
+			<label class="radio-inleft" for="sewno3">
+				<input type=radio name="sew3" value="No" checked id="sewno3" data-role="none">
+					No</label>
+			<label class="radio-inleft" for="sewyes3">
+				<input type=radio name="sew3" value="Yes" id="sewyes3" data-role="none">
+					Yes</label>
+           <label for "sewnote3-in">
+           <input type=text class="right50" id="sewnote3-in" data-role="none">Notes</label>
+           </fieldset>
+
+			<fieldset class="fieldborder">
+			<legend>Oil Sheen?</legend>
+			<label class="radio-inleft" for="oilno3">
+				<input type=radio name="oil3" value="No" checked id="oilno3" data-role="none">
+					No</label>
+			<label class="radio-inleft" for="oilyes3">
+				<input type=radio name="oil3" value="Yes" id="oilyes3" data-role="none">
+					Yes</label>
+           <label for "oilnote3-in">
+           <input type=text class="right50" id="oilnote3-in" data-role="none">Notes</label>
+           </fieldset>
+
+			<fieldset class="fieldborder">
+			<legend>Surface Scum?</legend>
+			<label class="radio-inleft" for="scmno3">
+				<input type=radio name="scm3" value="No" checked id="scmno3" data-role="none">
+					No</label>
+			<label class="radio-inleft" for="scmyes3">
+				<input type=radio name="scm3" value="Yes" id="scmyes3" data-role="none">
+					Yes</label>
+           <label for "scmnote3-in">
+           <input type=text class="right50" id="scmnote3-in" data-role="none">Notes</label>
+			</fieldset>
+
+			<p class="invert">Water Analysis Field Lab</p>
+			<p>Sample time: <input type="text" class = "right50" id="sample-field3" data-role="none" size="20"></p>
+
+			<label for "Deter3-in">
+				<input type=number class="right25" id="Deter3-in">Detergent (ppm)
+			</label>
+			<label for "Adds3-in">
+				<input type=number class="right25" id="Adds3-in"># of additions
+			</label>
+			<label for "Chlor3-in">
+				<input type=number class="right25" id="Chlor3-in">Chlorine (ppm)
+			</label>
+			<label for "Turbid3-in">
+				<input type=number class="right25" id="Turbid3-in">turbidity NTU
+			</label>
+			<label for "Odor3-in">
+				<input type=number class="right25" id="Odor3-in">Odor Number
+			</label>
+			<label for "Color3-in">
+				<input type=number class="right25" id="Color3-in">Color Number
+			</label>
+
+			<fieldset class="fieldborder">
+			<legend>Notes and Observations</legend>
+				<input type=text id="UWnote3-in" data-role="none" style="width:97%">
+			</fieldset>
+			<fieldset class="fieldborder">
+			<legend>Equipment Needs or Problems</legend>
+				<input type=text id="Equip3-in" data-role="none" style="width:97%">
+			</fieldset>
+			<fieldset class="fieldborder">
+			<legend>Team Member Names</legend>
+				<input type=text id="Team3-in" data-role="none" style="width:97%">
+			</fieldset>
+           			
+            <div id="formData3"></div><p></p>
+                <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
+        </form>
+        </div>
     </div>
 
     <!-- Start of right help panel -->
