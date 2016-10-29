@@ -38,10 +38,11 @@ class dbSortPage extends MainPage {
 function processData(&$uid) {
   global $radiolist;
   global $radiolist2;
-  $uid = array($this->formL->getValue("cat"),$this->formL->getValue("subsort"),$this->formL->getValue("subsubsort"));
+  $uid = array(); //$this->formL->getValue("cat"),$this->formL->getValue("subsort"),$this->formL->getValue("subsubsort"));
   if ( isset($this->formL->getValue("getFile")[0]) && 
 			$this->formL->getValue("getFile")[0] == "yes" ) {
 	  $this->sessnp = "yes";
+//	  setcookie("Download",$this->sessnp, time() + 86400, "/");
   }
     // Process the verified data here.
 }
@@ -62,12 +63,12 @@ function showContent($title, &$uid) {
 <div class="preamble" id="CWC-preamble" role="article">
 <h3>Data Base Output.</h3><p></p>
 <?php
+//	echo "sessnp = " . $this->sessnp ;
 	echo $this->formL->reportErrors();
 	echo $this->formL->start('POST', "", 'name="databasesort"');
 ?>
 <fieldset>
 </fieldset>
-</form>
 <table class="volemail"><tr><th>Site ID</th><th>Site Name</th><th>Latitude</th>
 <th>Longitude</th><th>Date</th><th>Time</th><th>Name</th><th>Team</th>
 <th>Air Temp</th><th>Air Inst ID</th><th>Water Temp</th><th>Water Inst ID </th>
@@ -76,6 +77,14 @@ function showContent($title, &$uid) {
 <th>Cond Inst ID</th><th>Flow</th><th>Clarity</th><th>Sky</th>
 <th>Precipitation</th></tr>
 <?php
+$plot_data[] = array("Site ID", "Site Name", "Latitude",
+"Longitude", "Date", "Time", "Name", "Team",
+"Air Temp", "Air Inst ID", "Water Temp", "Water Inst ID",
+"pH", "pH Inst ID", "DO", "DO Inst ID",
+"Transparency", "Trans Inst ID", "Conductivity",
+"Cond Inst ID", "Flow", "Clarity", "Sky",
+"Precipitation"); // header for csv file.
+
 $sql = "SELECT name, lat, lon, tdate, atime, site, siteid, teammates, cid
 	FROM Collector" ;
 $result = $this->db->query($sql);
@@ -117,14 +126,29 @@ while ( $row = $result->fetch(PDO::FETCH_ASSOC)) {
 	echo "<td>" . $row2['Sky']['value'] . "</td>" ;
 	echo "<td>" . $row2['Precipitation']['value'] . "</td>" ;
 	echo "</tr>" ;
+	$plot_data[] = array($row['siteid'], $row['site'], $row['lat'],
+	$row['lon'], $row['tdate'], $row['atime'], $row['name'], $row['teammates'],
+	$row2['Air_Temp']['value'] . $row2['CorF']['value'],
+	$row2['Air_Instrument_ID']['value'], 
+	$row2['Water_Temp']['value'] . $row2['WCorF']['value'],
+	$row2['Water_Instrument_ID']['value'], $row2['pH']['value'],
+	$row2['pH_Instrument_ID']['value'], $row2['Disolved_Oxygen']['value'],
+	$row2['DO_Instrument_ID']['value'], $row2['Transparency']['value'],
+	$row2['Transparency_Instrument_ID']['value'], $row2['Conductivity']['value'],
+	$row2['Conductivity_Instrument_ID']['value'], $row2['Flow_Discharge']['value'],
+	$row2['Clarity']['value'], $row2['Sky']['value'], $row2['Precipitation']['value']);
 }	
 echo "</table>" ;
 ?>
 </div>
 
 <?php
-$this->formL->finish();
+	echo "<input class='subbutton' type='submit' name='Submit' value='Submit'>";
+	echo$this->formL->makeCheckBoxes('getFile',array('Download File?'=>'yes'));
+	echo "</form>";
+	$this->formL->finish();
 //mysql_free_result($result);
+	$this->write_csv("Place",$plot_data);
 }
 
 /**
@@ -650,8 +674,6 @@ function locationTable($sub,$subsub) {
 function write_csv($title,$data) {
 
     $myfile = fopen("output.csv","w") or die("Unable to open file");
-    $txt = array($title,"Trash Weight","Recycle Weight");
-    fputcsv($myfile, $txt,";",' ');
     foreach ($data as $fields) {
        fputcsv($myfile,$fields,";",'"');
     }
