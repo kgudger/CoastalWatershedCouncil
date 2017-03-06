@@ -16,8 +16,10 @@
 	$dat= $_REQUEST['datein'];
 	$atm= $_REQUEST['timein'];
 	$sit= $_REQUEST['sitein'];
-	$sid= $_REQUEST['siteidin'];
+	$sid= $_REQUEST['siteid'];
 	$tem= $_REQUEST['teamin'];
+//	var_dump($_REQUEST);
+//	echo "Site ID is " . $sid . "\n";
 	echo $db->send($lat,$lon,$nam,$dat,$atm,$sit,$sid,$tem);
   }
   elseif ($command == "getTally") {

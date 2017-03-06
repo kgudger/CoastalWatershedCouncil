@@ -202,15 +202,13 @@ class DB
 
 	function getDate()
 	{
-		$sql = "SELECT DISTINCT CAST(`tdate` AS DATE) AS dateonly 
-			FROM `Collector`
-			ORDER BY dateonly";
+		$sql = "SELECT Date
+			FROM `Date`";
 		$result = $this->db->query($sql);
 		$output = array();
 		$output[Date] = "Date" ;
-		$temp = array();
-		while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-			$temp[] = $row[dateonly] ;
+		if ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+			$temp = $row[Date] ;
 		}
 		$output[results] = $temp ;
 		echo json_encode($output) ;

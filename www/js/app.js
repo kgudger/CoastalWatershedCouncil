@@ -25,6 +25,8 @@
 // by the same event or other events.
 
 function onAppReady() {
+    queryString = "command=getDate";
+    sendfunc(queryString)
     ready();
 }
 
@@ -244,6 +246,14 @@ function sendfunc(params) {
               returnedList = (xmlhttp.responseText);
               if ( returnedList != "Collector Entered" ) {
                   returnedList = JSON.parse(xmlhttp.responseText);
+                  if (typeof (returnedList["Date"]) !== 'undefined') {
+                    var val = document.getElementById("date-field");
+                    var ndate = returnedList["results"];
+                    if ( ndate != undefined && ndate != "0000-00-00") {
+						val.value = returnedList["results"];
+						val.disabled = true;
+					}
+                  }
               }
           }
 	}
