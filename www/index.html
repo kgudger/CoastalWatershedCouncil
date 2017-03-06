@@ -56,11 +56,11 @@ $(document).bind('mobileinit',function(){
 				<ul>
 					<li><a href="#fragment-1" class="ui-btn-active">Snapshot Day</a></li>
 					<!-- <li><a href="#fragment-2">First Flush</a></li> -->
-					<li><a href="#fragment-3">Urban Watch</a></li>
+					<li><a href="#fragment-3" class="ui-btn-active">Urban Watch</a></li>
 				</ul>
 			</div>
 		<div id="fragment-1">
-        <h2>FIELD DATA SHEET</h2>
+        <h2>SNAPSHOT DAY DATA SHEET</h2>
         <form id="fielddataform">
 			<label for "latin">
 			<input id="latin" type="text" class="right50" name="lat" value="">
@@ -89,43 +89,64 @@ $(document).bind('mobileinit',function(){
 				Your Name
            </label>
            <label for "team-in">
-           <input type="textarea" rows="4" cols="20" class="right50" name="teamin" id="team-in">Team Member Names</label>
+           <textarea form="fielddataform" rows="4" cols="20" class="right50" name="teamin" id="team-in"></textarea>Team Member Names</label>
 
 			<fieldset class="fieldborder">
 			<legend class="invert">Sample 1</legend>
-				<label for "anal1_in">
-				<input type="text" class="right50" id="anal1_in" name="anal1-in">Analyte Type</label>
+			<table> <tr><td style="width:100%">Analyte Type</td><td>
+				<select name="anal1-in" id="anal1-in" data-inline="true">
+					<option value="Bacteria (E. Coli, Enterococcus)">Bacteria (E. Coli, Enterococcus)</option>
+					<option value="Nutrients (Orthophosphate and Nitrate)">Nutrients (Orthophosphate and Nitrate)</option>
+					<option value="Field Duplicate (Bacteria)">Field Duplicate (Bacteria)</option>
+					<option value="Field Blank (Bacteria)">Field Blank (Bacteria)</option>
+					<option value="Field Duplicate (Nutrients)">Field Duplicate (Nutrients)</option>
+					<option value="Field Blank (Nutrients)">Field Blank (Nutrients)</option>
+				</select></td></table>
+				<label for "tcoll1_in">Time Collected
+				<input type="time" class="right50" id="tcoll1_in" name="tcol1-in" data-role="none" size="20">
+				</label>
 				<label for "colname1_in">
 				<input type="text" class="right50" id="colname1_in" name="coln1-in">Collector Name</label>
 				<label for "notes1_in">
 				<input type="text" class="right50" id="notes1_in" name="note1-in">Notes</label>
-				<label for "tcoll1_in">Time Collected
-				<input type="time" class="right50" id="tcoll1_in" name="tcol1-in" data-role="none" size="20">
-				</label>
 			</fieldset>
 			<fieldset class="fieldborder">
 			<legend class="invert">Sample 2</legend>
-				<label for "anal2_in">
-				<input type="text" class="right50" id="anal2_in" name="anal2-in">Analyte Type</label>
+			<table> <tr><td style="width:100%">Analyte Type</td><td>
+				<select name="anal2-in" id="anal2-in" data-inline="true">
+					<option value="Bacteria (E. Coli, Enterococcus)">Bacteria (E. Coli, Enterococcus)</option>
+					<option value="Nutrients (Orthophosphate and Nitrate)">Nutrients (Orthophosphate and Nitrate)</option>
+					<option value="Field Duplicate (Bacteria)">Field Duplicate (Bacteria)</option>
+					<option value="Field Blank (Bacteria)">Field Blank (Bacteria)</option>
+					<option value="Field Duplicate (Nutrients)">Field Duplicate (Nutrients)</option>
+					<option value="Field Blank (Nutrients)">Field Blank (Nutrients)</option>
+				</select></td></table>
+				<label for "tcoll2_in">Time Collected
+				<input type="time" class="right50" id="tcoll2_in" name="tcol2-in" data-role="none" size="20">
+				</label>
 				<label for "colname2_in">
 				<input type="text" class="right50" id="colname2_in" name="coln2-in">Collector Name</label>
 				<label for "notes2_in">
 				<input type="text" class="right50" id="notes2_in" name="note2-in">Notes</label>
-				<label for "tcoll2_in">Time Collected
-				<input type="time" class="right50" id="tcoll2_in" name="tcol2-in" data-role="none" size="20">
-				</label>
 			</fieldset>
 			<fieldset class="fieldborder">
 			<legend class="invert">Sample 3</legend>
-				<label for "anal3_in">
-				<input type="text" class="right50" id="anal3_in" name="anal3-in">Analyte Type</label>
+			<table> <tr><td style="width:100%">Analyte Type</td><td>
+				<select name="anal3-in" id="anal3-in" data-inline="true">
+					<option value="Bacteria (E. Coli, Enterococcus)">Bacteria (E. Coli, Enterococcus)</option>
+					<option value="Nutrients (Orthophosphate and Nitrate)">Nutrients (Orthophosphate and Nitrate)</option>
+					<option value="Field Duplicate (Bacteria)">Field Duplicate (Bacteria)</option>
+					<option value="Field Blank (Bacteria)">Field Blank (Bacteria)</option>
+					<option value="Field Duplicate (Nutrients)">Field Duplicate (Nutrients)</option>
+					<option value="Field Blank (Nutrients)">Field Blank (Nutrients)</option>
+				</select></td></table>
+				<label for "tcoll3_in">Time Collected
+				<input type="time" class="right50" id="tcoll3_in" name="tcol3-in" data-role="none" size="20">
+				</label>
 				<label for "colname3_in">
 				<input type="text" class="right50" id="colname3_in" name="coln3-in">Collector Name</label>
 				<label for "notes3_in">
 				<input type="text" class="right50" id="notes3_in" name="note3-in">Notes</label>
-				<label for "tcoll3_in">Time Collected
-				<input type="time" class="right50" id="tcoll3_in" name="tcol3-in" data-role="none" size="20">
-				</label>
 			</fieldset>
 <p></p>
 			<fieldset class="fieldborder">
