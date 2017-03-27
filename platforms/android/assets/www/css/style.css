@@ -142,14 +142,14 @@ label.radio-inline {
   float: right;
   clear: none;
   display: block;
-  padding: 2px 1em 0 0;
+  padding: 10px 1em 0 0;
 }
 
 input[type=radio],
 input.radio {
   float: right;
   clear: none;
-  margin: 2px 0 0 2px;
+  margin: 4px 0 0 2px;
 }
 h2 {
 	text-overflow: clip !important;
@@ -182,4 +182,5 @@ label.radio-inleft {
   display: block;
   padding: 2px 1em 0 0;
 }
+
 

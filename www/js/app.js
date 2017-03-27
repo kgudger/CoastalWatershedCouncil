@@ -50,6 +50,7 @@ function ready() {
     if (navigator.geolocation) {
 		var location_timeout = setTimeout("defaultPosition()", 10000);
 		// changed to 2 seconds 
+		console.log("In Ready");
         navigator.geolocation.getCurrentPosition(
 			function(pos) { clearTimeout(location_timeout); showPosition(pos); },
 			function(err) {
@@ -68,13 +69,13 @@ function ready() {
 		onClose: function(dates) { setDate(dates); }
 	});
 	$('#arrive-field').timeEntry({spinnerImage: './images/spinnerDefault.png'});
-	$('#collect-field').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+/*	$('#collect-field').timeEntry({spinnerImage: './images/spinnerDefault.png'});
  	$('#date-field2').datepick({dateFormat: 'yyyy-mm-dd',
-		onClose: function(dates) { setDate(dates); }
-	});
+		onClose: function(dates) { setDate(dates); } 
+	}); 
 	$('#arrive-field2').timeEntry({spinnerImage: './images/spinnerDefault.png'});
 	$('#depart-field2').timeEntry({spinnerImage: './images/spinnerDefault.png'});
-	$('#rtime-field2').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+	$('#rtime-field2').timeEntry({spinnerImage: './images/spinnerDefault.png'});*/
  	$('#date-field3').datepick({dateFormat: 'yyyy-mm-dd',
 		onClose: function(dates) { setDate(dates); }
 	});
@@ -82,7 +83,7 @@ function ready() {
 	$('#sample-field3').timeEntry({spinnerImage: './images/spinnerDefault.png'});
 
 	$('#tcoll1_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
-	$('#tcoll2_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+//	$('#tcoll2_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
 	$('#tcoll3_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
 	
 	setupDate();
@@ -118,14 +119,14 @@ function setupDate() {
 	 */
 	function setDate(dates) {
         var out = document.getElementById("datein");
-        var out2 = document.getElementById("datein2");
+//        var out2 = document.getElementById("datein2");
         var out3 = document.getElementById("datein3");
 		var selected = ''; 
 		for (var i = 0; i < dates.length; i++) { 
 			selected += ',' + $.datepick.formatDate('yyyy-mm-dd',dates[i]); 
 		} 
 //		alert('Selected dates are: ' + selected.substring(1)); 
-        out.value = out2.value = out3.value = selected.substring(1) ;
+        out.value = /*out2.value = */out3.value = selected.substring(1) ;
     }
 
 
@@ -133,7 +134,7 @@ function setupDate() {
  *	sets current latitude and longitude from ready() function
  */
 function showPosition(position) {
-//	console.log('In showPosition');
+	console.log('In showPosition');
 	if ( position ) {
 		currentLatitude = position.coords.latitude;
 		currentLongitude = position.coords.longitude;
@@ -274,3 +275,88 @@ function sendfunc(params) {
 				intel.xdk.device.launchExternal(url);
 		};
 // 37.0067 -121.97
+
+/**
+ *	photoCap function, called when Take Photo clicked
+ */
+function photoCap() {
+	console.log('In photoCap Lat= '+currentLatitude + " Lon=" + currentLongitude);
+//	alert("Taking Photo");
+	if(navigator.camera) {
+		var canid  = document.getElementById('can_id');
+		navigator.camera.getPicture(function(imageData){
+			var canvas = document.getElementById('canvas');
+//			style="width:auto;height:500px;"
+			canvas.style.width = "auto";
+//			canvas.style.height = "500px";
+			canvas.style.height = "auto";
+			var ctx = canvas.getContext('2d');
+			var image = new Image();
+			image.src = "data:image/jpeg;base64," + imageData;
+//			image.src = imageData;
+			image.onload = function(e) {
+				ctx.drawImage(image,0,0, image.width, image.height,
+									0,0, canvas.width, canvas.height);
+				ctx.lineWidth=3;
+				ctx.fillStyle="yellow";
+//				ctx.lineStyle="#ffff00";
+				ctx.font="5px sans-serif";
+				var text = "Lat=" + currentLatitude ;
+				ctx.strokeStyle = 'black';
+				ctx.strokeText(text,10,10);
+				ctx.fillText(text,10,10);
+				text = "Lon=" + currentLongitude;
+				ctx.strokeText(text,10,20);
+				ctx.fillText(text,10,20);
+				text = new Date() ;
+				ctx.strokeText(text,10,30);
+				ctx.fillText(text,10,30);
+			}
+//			console.log(imageData);
+		}, null, {sourceType:Camera.PictureSourceType.CAMERA, quality: 50, 
+//				targetWidth: 1500, targetHeight: 2048,
+				correctOrientation: true,
+				encodingType: Camera.EncodingType.JPEG,
+				destinationType: Camera.DestinationType.DATA_URL});
+		if (butid = document.getElementById('saveButt')) 
+			butid.parentNode.removeChild(butid);
+		var btn = document.createElement("button");
+		btn.innerHTML = "Save Photo";
+		btn.setAttribute("id", "saveButt");
+		btn.className="blue_sub";
+		btn.onclick = savePhoto;
+		canid.appendChild(btn);
+	} else {
+		alert("Camera not supported on this device.");
+	}
+}
+
+function cameraError(message)
+{
+	alert ("Camera Operation Failed with error " + message);
+}
+
+/**
+ *	savePhoto function, called when photo save button clicked
+ */
+function savePhoto()
+{
+	window.canvas2ImagePlugin.saveImageDataToLibrary(
+        function(msg){
+			alert("Saving Photo");
+            console.log(msg);
+			var canvas = document.getElementById('canvas');
+//			style="width:auto;height:500px;"
+			canvas.style.width = "auto";
+			canvas.style.height = "0px";
+			var ctx = canvas.getContext('2d');
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			var butid = document.getElementById('saveButt');
+			butid.parentNode.removeChild(butid);
+        },
+        function(err){
+            console.log(err);
+        },
+        document.getElementById('canvas')
+    );
+}

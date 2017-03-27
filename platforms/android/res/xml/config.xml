@@ -1,9 +1,33 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.phonegap.helloworld" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Canvas2ImagePlugin">
+        <param name="android-package" value="org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin" />
+    </feature>
+    <allow-intent href="market:*" />
+    <icon platform="android" qualifier="xxhdpi" src="www/images/CWClogo144.png" />
+    <icon platform="android" qualifier="xhdpi" src="www/images/CWClogo96.png" />
+    <icon platform="android" qualifier="hdpi" src="www/images/CWClogo72.png" />
+    <icon platform="android" qualifier="mdpi" src="www/images/CWClogo48.png" />
+    <icon platform="android" qualifier="ldpi" src="www/images/CWClogo36.png" />
+    <splash density="ldpi" platform="android" src="www/images/CWClogo320426.png" />
+    <splash density="mdpi" platform="android" src="www/images/CWClogo320470.png" />
+    <splash density="hdpi" platform="android" src="www/images/CWClogo480640.png" />
+    <splash density="xhdpi" platform="android" src="www/images/CWClogo720960.png" />
     <name>Coastal Watershed Council</name>
     <description>
         Field Data Sheet Input Application.
@@ -19,8 +43,7 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <allow-intent href="market:*" />
-    <preference name="loglevel" value="DEBUG" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="5000" />
+    <preference name="android-minSdkVersion" value="14" />
 </widget>

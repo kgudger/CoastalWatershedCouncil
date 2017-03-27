@@ -88,9 +88,10 @@ $(document).bind('mobileinit',function(){
            <input type="text" class="right50" id="name-in" name="namein" placeholder="your name">
 				Your Name
            </label>
+           <fieldset>
            <label for "team-in">
            <textarea form="fielddataform" rows="4" cols="20" class="right50" name="teamin" id="team-in"></textarea>Team Member Names</label>
-
+			</fieldset>
 			<fieldset class="fieldborder">
 			<legend class="invert">Sample 1</legend>
 			<table> <tr><td style="width:100%">Analyte Type</td><td>
@@ -273,9 +274,16 @@ $(document).bind('mobileinit',function(){
  -->
 			</fieldset>
             <div id="formData"></div><p></p>
-                <a href="#" class="blue_sub" onclick="sendData()">Submit</a>
+				<table align="center">
+				<tr><td><a href="#" class="blue_sub" onclick="photoCap()">Take Photo</a></td>
+                <td><a href="#" class="blue_sub" onclick="sendData()">Submit</a></td>
+                </tr></table>
         </form>
         </div>
+        <div style="text-align:center;margin:20px;" id="can_id">
+        <canvas id="canvas"/>
+		</div>
+
 <!--		<div id="fragment-2">
         <h2>FIRST FLUSH DATA SHEET</h2>
         <form id="trashform2">

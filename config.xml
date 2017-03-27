@@ -18,8 +18,29 @@
     <allow-intent href="geo:*" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="5000" />
+	<feature name="Camera">
+		<param name="ios-package" value="CDVCamera" />
+		<param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+	</feature>
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.FileUtils" />
+    </feature>
+    <feature name="FileTransfer">
+        <param name="android-package" value="org.apache.cordova.FileTransfer" />
+    </feature>    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="android-minSdkVersion" value="14" />
     <platform name="android">
         <allow-intent href="market:*" />
+        <icon platform="android" qualifier="xxhdpi" src="www/images/CWClogo144.png" />
+        <icon platform="android" qualifier="xhdpi" src="www/images/CWClogo96.png" />
+        <icon platform="android" qualifier="hdpi" src="www/images/CWClogo72.png" />
+        <icon platform="android" qualifier="mdpi" src="www/images/CWClogo48.png" />
+        <icon platform="android" qualifier="ldpi" src="www/images/CWClogo36.png" />
+        <splash platform="android" density="ldpi" src="www/images/CWClogo320426.png" />
+        <splash platform="android" density="mdpi" src="www/images/CWClogo320470.png" />
+        <splash platform="android" density="hdpi" src="www/images/CWClogo480640.png" />
+        <splash platform="android" density="xhdpi" src="www/images/CWClogo720960.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
