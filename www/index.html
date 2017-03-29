@@ -75,7 +75,7 @@ $(document).bind('mobileinit',function(){
 <!--            <label for "arrive-field">
             <input type=text class="right50" id="arrive-field">
                 Arrival Time</label> -->
-           <p>Arrival time: <input type="time" class = "right50" id="arrive-field" data-role="none" size="20" name="timein"></p>
+           <p>Arrival time: <input type="text" class = "right50" id="arrive-field" data-role="none" size="20" name="timein"></p>
            <label for "site-name">
            <input type="text" class="right50" id="site-name" name="sitein">Site Name</label>
            <label for "site-id">
@@ -104,7 +104,7 @@ $(document).bind('mobileinit',function(){
 					<option value="Field Blank (Nutrients)">Field Blank (Nutrients)</option>
 				</select></td></table>
 				<label for "tcoll1_in">Time Collected
-				<input type="time" class="right50" id="tcoll1_in" name="tcol1-in" data-role="none" size="20">
+				<input type="text" class="right50" id="tcoll1_in" name="tcol1-in" data-role="none" size="20">
 				</label>
 				<label for "colname1_in">
 				<input type="text" class="right50" id="colname1_in" name="coln1-in">Collector Name</label>
@@ -123,7 +123,7 @@ $(document).bind('mobileinit',function(){
 					<option value="Field Blank (Nutrients)">Field Blank (Nutrients)</option>
 				</select></td></table>
 				<label for "tcoll2_in">Time Collected
-				<input type="time" class="right50" id="tcoll2_in" name="tcol2-in" data-role="none" size="20">
+				<input type="text" class="right50" id="tcoll2_in" name="tcol2-in" data-role="none" size="20">
 				</label>
 				<label for "colname2_in">
 				<input type="text" class="right50" id="colname2_in" name="coln2-in">Collector Name</label>
@@ -142,7 +142,7 @@ $(document).bind('mobileinit',function(){
 					<option value="Field Blank (Nutrients)">Field Blank (Nutrients)</option>
 				</select></td></table>
 				<label for "tcoll3_in">Time Collected
-				<input type="time" class="right50" id="tcoll3_in" name="tcol3-in" data-role="none" size="20">
+				<input type="text" class="right50" id="tcoll3_in" name="tcol3-in" data-role="none" size="20">
 				</label>
 				<label for "colname3_in">
 				<input type="text" class="right50" id="colname3_in" name="coln3-in">Collector Name</label>
@@ -764,6 +764,19 @@ Santa Cruz, CA 95062</br>
 <a href="#" onclick="splashclick('tel: +18314649200')">Phone: (831) 464-9200</a></br>
 <p>Version 0.1</p>
 	</div><!-- /panel -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="summary">
+
+	<div data-role="header" class="kgheader">
+		<img src="images/logosmall.png" height = "40" border="0" class="displaycenter"></img>
+    </div>
+	<div role="main" class="ui-content">
+        <div id="summaryData"></div><p></p>
+        <p>Thank you for your data submission.  Click below to go back to the Field Data Sheet.</gr></p>
+		<p><a href="#dataCard" data-rel="back" data-transition="slide" class="blue-sub">Back to Field Data Sheet</a></p>
+	</div><!-- /content -->
 
 </div><!-- /page -->
 

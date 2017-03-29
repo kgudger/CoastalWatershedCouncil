@@ -83,7 +83,7 @@ function ready() {
 	$('#sample-field3').timeEntry({spinnerImage: './images/spinnerDefault.png'});
 
 	$('#tcoll1_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
-//	$('#tcoll2_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
+	$('#tcoll2_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
 	$('#tcoll3_in').timeEntry({spinnerImage: './images/spinnerDefault.png'});
 	
 	setupDate();
@@ -225,6 +225,8 @@ function sendData() {
 		var ele = document.getElementById('dataCard');
 		window.scrollTo(ele.offsetLeft,ele.offsetTop);
    }
+   console.log("Should switch now.");
+
 }
 
 /**
@@ -245,7 +247,8 @@ function sendfunc(params) {
 		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
           {
               returnedList = (xmlhttp.responseText);
-              if ( returnedList != "Collector Entered" ) {
+              console.log("Returned value is " + returnedList.search("Collector Entered"));
+              if ( returnedList.search("Collector Entered") < 0 ) {
                   returnedList = JSON.parse(xmlhttp.responseText);
                   if (typeof (returnedList["Date"]) !== 'undefined') {
                     var val = document.getElementById("date-field");
@@ -256,6 +259,10 @@ function sendfunc(params) {
 					}
                   }
               }
+              else {
+//				  	$( ":mobile-pagecontainer" ).pagecontainer( "change", "#summary", { role: "dialog" } );
+					confirm("Thank you for your data submission!");
+			  }
           }
 	}
 	xmlhttp.open("GET","http://home.loosescre.ws/~keith/CWC/server.php" + '?' + params, true);
