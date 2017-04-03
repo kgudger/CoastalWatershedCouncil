@@ -17,17 +17,19 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <preference name="SplashScreen" value="screen" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="SplashScreenDelay" value="5000" />
-	<feature name="Camera">
-		<param name="ios-package" value="CDVCamera" />
-		<param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
-	</feature>
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.FileUtils" />
     </feature>
     <feature name="FileTransfer">
         <param name="android-package" value="org.apache.cordova.FileTransfer" />
-    </feature>    <preference name="SplashScreen" value="screen" />
+    </feature>
+    <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="5000" />
     <preference name="android-minSdkVersion" value="14" />
     <platform name="android">
@@ -37,15 +39,29 @@
         <icon platform="android" qualifier="hdpi" src="www/images/CWClogo72.png" />
         <icon platform="android" qualifier="mdpi" src="www/images/CWClogo48.png" />
         <icon platform="android" qualifier="ldpi" src="www/images/CWClogo36.png" />
-        <splash platform="android" density="ldpi" src="www/images/CWClogo320426.png" />
-        <splash platform="android" density="mdpi" src="www/images/CWClogo320470.png" />
-        <splash platform="android" density="hdpi" src="www/images/CWClogo480640.png" />
-        <splash platform="android" density="xhdpi" src="www/images/CWClogo720960.png" />
+        <splash density="ldpi" platform="android" src="www/images/CWClogo320426.png" />
+        <splash density="mdpi" platform="android" src="www/images/CWClogo320470.png" />
+        <splash density="hdpi" platform="android" src="www/images/CWClogo480640.png" />
+        <splash density="xhdpi" platform="android" src="www/images/CWClogo720960.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+        <icon height="144" platform="ios" src="www/images/CWClogo144.png" width="144" />
+        <icon height="50" platform="ios" src="www/images/CWClogo48.png" width="50" />
+        <icon height="76" platform="ios" src="www/images/CWClogo72.png" width="76" />
+        <icon height="100" platform="ios" src="www/images/CWClogo96.png" width="100" />
+        <splash height="480" platform="ios" src="www/images/splash320426.png" width="320" />
+        <splash height="960" platform="ios" src="www/images/splash640x960.png" width="640" />
+        <splash height="1136" platform="ios" src="www/images/splash640x1136.png" width="640" />
+        <splash height="1334" platform="ios" src="www/images/splash750x1334.png" width="750" />
+        <splash height="2208" platform="ios" src="www/images/splash1242x2208.png" width="1242" />
+
     </platform>
-    <engine name="ios" spec="~3.9.2" />
     <engine name="android" spec="~4.1.1" />
+    <plugin name="cordova-plugin-camera" spec="https://git-wip-us.apache.org/repos/asf/cordova-plugin-camera.git" />
+    <plugin name="cordova-plugin-media-capture" spec="https://git-wip-us.apache.org/repos/asf/cordova-plugin-media-capture.git" />
+    <plugin name="cordova-plugin-media" spec="https://git-wip-us.apache.org/repos/asf/cordova-plugin-media.git" />
+    <plugin name="cordova-plugin-geolocation" spec="~2.4.2" />
+    <engine name="ios" spec="~3.9.2" />
 </widget>
