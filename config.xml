@@ -47,10 +47,31 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <icon height="144" platform="ios" src="www/images/CWClogo144.png" width="144" />
-        <icon height="50" platform="ios" src="www/images/CWClogo48.png" width="50" />
-        <icon height="76" platform="ios" src="www/images/CWClogo72.png" width="76" />
-        <icon height="100" platform="ios" src="www/images/CWClogo96.png" width="100" />
+        <icon src="www/images/CWClogo180.png" width="180" height="180" />
+              <!-- iOS 7.0+ -->
+              <!-- iPhone / iPod Touch  -->
+        <icon src="www/images/CWClogo60.png" width="60" height="60" />
+        <icon src="www/images/CWClogo120.png" width="120" height="120" />
+        <!-- iPad -->
+        <icon src="www/images/CWClogo76.png" width="76" height="76" />
+        <icon src="www/images/CWClogo152.png" width="152" height="152" />
+        <!-- iOS 6.1 -->
+        <!-- Spotlight Icon -->
+        <icon src="www/images/CWClogo40.png" width="40" height="40" />
+        <icon src="www/images/CWClogo80.png" width="80" height="80" />
+        <!-- iPhone / iPod Touch -->
+        <icon src="www/images/CWClogo57.png" width="57" height="57" />
+        <icon src="www/images/CWClogo114.png" width="114" height="114" />
+        <!-- iPad -->
+        <icon src="www/images/CWClogo72.png" width="72" height="72" />
+        <icon src="www/images/CWClogo144.png" width="144" height="144" />
+        <!-- iPhone Spotlight and Settings Icon -->
+        <icon src="www/images/CWClogo29.png" width="29" height="29" />
+        <icon src="www/images/CWClogo58.png" width="58" height="58" />
+        <!-- iPad Spotlight and Settings Icon -->
+		<splash src="www/images/splash320x480.png" width="320" height="480"/>
+		<splash src="www/images/splash768x1024.png" width="768" height="1024"/>
+		<splash src="www/images/splash15362048.png" width="1536" height="2048"/>
         <splash height="480" platform="ios" src="www/images/splash320426.png" width="320" />
         <splash height="960" platform="ios" src="www/images/splash640x960.png" width="640" />
         <splash height="1136" platform="ios" src="www/images/splash640x1136.png" width="640" />
