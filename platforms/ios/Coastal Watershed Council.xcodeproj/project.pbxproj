@@ -37,6 +37,8 @@
 		5C6B07FB47EC44AB88DBCBEB /* CDVFile.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4A635FF35D4F2A88531E32 /* CDVFile.m */; };
 		64AF00A42A3B4249B40A395D /* CDVCapture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 115B59983EA34C928A6054FA /* CDVCapture.bundle */; };
 		657563151E92F698008F8E39 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 657563141E92F698008F8E39 /* Images.xcassets */; };
+		658966781E943DD50039CBA9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 658966771E943DD50039CBA9 /* Default-568h@2x.png */; };
+		6589667B1E9440E40039CBA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6589667A1E9440E40039CBA9 /* Launch Screen.storyboard */; };
 		72C37F4A70FA4E2A81ADC61E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FE782574F214CE6AB8C2A18 /* ImageIO.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		7E7966DE1810823500FA85AD /* icon-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D41810823500FA85AD /* icon-40.png */; };
 		7E7966DF1810823500FA85AD /* icon-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E7966D51810823500FA85AD /* icon-40@2x.png */; };
@@ -120,6 +122,8 @@
 		55AB880086F84EACBCB97A78 /* CDVSplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		657563141E92F698008F8E39 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Coastal Watershed Council/Images.xcassets"; sourceTree = SOURCE_ROOT; };
+		658966771E943DD50039CBA9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Coastal Watershed Council/Resources/splash/Default-568h@2x.png"; sourceTree = "<group>"; };
+		6589667A1E9440E40039CBA9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = SOURCE_ROOT; };
 		6AED6CEF21AA4EA59A65550F /* Canvas2ImagePlugin.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = Canvas2ImagePlugin.h; path = org.devgeeks.Canvas2ImagePlugin/Canvas2ImagePlugin.h; sourceTree = "<group>"; };
 		7E7966D41810823500FA85AD /* icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40.png"; sourceTree = "<group>"; };
 		7E7966D51810823500FA85AD /* icon-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-40@2x.png"; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				6589667A1E9440E40039CBA9 /* Launch Screen.storyboard */,
+				658966771E943DD50039CBA9 /* Default-568h@2x.png */,
 				EB87FDF41871DAF40020F90C /* config.xml */,
 				EB87FDF31871DA8E0020F90C /* www */,
 				EB87FDF21871DA7A0020F90C /* merges */,
@@ -431,11 +437,13 @@
 				3088BBC0154F3926009F9C59 /* Default-Portrait~ipad.png in Resources */,
 				30B4F30019D5E07200D9F7D8 /* Default-667h.png in Resources */,
 				7E7966DE1810823500FA85AD /* icon-40.png in Resources */,
+				6589667B1E9440E40039CBA9 /* Launch Screen.storyboard in Resources */,
 				3088BBC1154F3926009F9C59 /* Default@2x~iphone.png in Resources */,
 				7E7966E21810823500FA85AD /* icon-60.png in Resources */,
 				3088BBC2154F3926009F9C59 /* Default~iphone.png in Resources */,
 				D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */,
 				30B4F30219D5E07200D9F7D8 /* Default-Landscape-736h.png in Resources */,
+				658966781E943DD50039CBA9 /* Default-568h@2x.png in Resources */,
 				30C1856619D5FC0A00212699 /* icon-60@3x.png in Resources */,
 				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
 				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,

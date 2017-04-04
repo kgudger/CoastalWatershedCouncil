@@ -44,6 +44,27 @@
     <allow-intent href="geo:*" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
+    <icon height="180" src="www/images/CWClogo180.png" width="180" />
+    <icon height="60" src="www/images/CWClogo60.png" width="60" />
+    <icon height="120" src="www/images/CWClogo120.png" width="120" />
+    <icon height="76" src="www/images/CWClogo76.png" width="76" />
+    <icon height="152" src="www/images/CWClogo152.png" width="152" />
+    <icon height="40" src="www/images/CWClogo40.png" width="40" />
+    <icon height="80" src="www/images/CWClogo80.png" width="80" />
+    <icon height="57" src="www/images/CWClogo57.png" width="57" />
+    <icon height="114" src="www/images/CWClogo114.png" width="114" />
+    <icon height="72" src="www/images/CWClogo72.png" width="72" />
+    <icon height="144" src="www/images/CWClogo144.png" width="144" />
+    <icon height="29" src="www/images/CWClogo29.png" width="29" />
+    <icon height="58" src="www/images/CWClogo58.png" width="58" />
+    <splash height="480" src="www/images/splash320x480.png" width="320" />
+    <splash height="1024" src="www/images/splash768x1024.png" width="768" />
+    <splash height="2048" src="www/images/splash15362048.png" width="1536" />
+    <splash height="480" platform="ios" src="www/images/splash320426.png" width="320" />
+    <splash height="960" platform="ios" src="www/images/splash640x960.png" width="640" />
+    <splash height="1136" platform="ios" src="www/images/splash640x1136.png" width="640" />
+    <splash height="1334" platform="ios" src="www/images/splash750x1334.png" width="750" />
+    <splash height="2208" platform="ios" src="www/images/splash1242x2208.png" width="1242" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="cloud" />
     <preference name="DisallowOverscroll" value="false" />

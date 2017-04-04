@@ -289,6 +289,8 @@ function sendfunc(params) {
 function photoCap() {
 	console.log('In photoCap Lat= '+currentLatitude + " Lon=" + currentLongitude);
 //	alert("Taking Photo");
+	if (butid = document.getElementById('saveButt')) 
+		butid.parentNode.removeChild(butid);
 	if(navigator.camera) {
 		var canid  = document.getElementById('can_id');
 		navigator.camera.getPicture(function(imageData){
@@ -318,6 +320,12 @@ function photoCap() {
 				text = new Date() ;
 				ctx.strokeText(text,10,30);
 				ctx.fillText(text,10,30);
+				var btn = document.createElement("button");
+				btn.innerHTML = "Save Photo";
+				btn.setAttribute("id", "saveButt");
+				btn.className="blue_sub";
+				btn.onclick = savePhoto;
+				canid.appendChild(btn);
 			}
 //			console.log(imageData);
 		}, null, {sourceType:Camera.PictureSourceType.CAMERA, quality: 50, 
@@ -325,14 +333,6 @@ function photoCap() {
 				correctOrientation: true,
 				encodingType: Camera.EncodingType.JPEG,
 				destinationType: Camera.DestinationType.DATA_URL});
-		if (butid = document.getElementById('saveButt')) 
-			butid.parentNode.removeChild(butid);
-		var btn = document.createElement("button");
-		btn.innerHTML = "Save Photo";
-		btn.setAttribute("id", "saveButt");
-		btn.className="blue_sub";
-		btn.onclick = savePhoto;
-		canid.appendChild(btn);
 	} else {
 		alert("Camera not supported on this device.");
 	}
