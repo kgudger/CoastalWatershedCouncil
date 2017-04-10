@@ -295,10 +295,12 @@ function photoCap() {
 		var canid  = document.getElementById('can_id');
 		navigator.camera.getPicture(function(imageData){
 			var canvas = document.getElementById('canvas');
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
 //			style="width:auto;height:500px;"
-			canvas.style.width = "auto";
+//			canvas.style.width = "auto";
 //			canvas.style.height = "500px";
-			canvas.style.height = "auto";
+//			canvas.style.height = "auto";
 			var ctx = canvas.getContext('2d');
 			var image = new Image();
 			image.src = "data:image/jpeg;base64," + imageData;
@@ -354,8 +356,8 @@ function savePhoto()
             console.log(msg);
 			var canvas = document.getElementById('canvas');
 //			style="width:auto;height:500px;"
-			canvas.style.width = "auto";
-			canvas.style.height = "0px";
+			canvas.width = "0px";
+			canvas.height = "0px";
 			var ctx = canvas.getContext('2d');
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			var butid = document.getElementById('saveButt');
