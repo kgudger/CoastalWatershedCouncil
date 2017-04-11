@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Info.plist
+   Coastal Watershed Council
+
+   Created by CTV Staff on 4/11/17.
+   Copyright (c) 2017 __MyCompanyName__. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+<key>UILaunchImages</key>
+    <array>
+        <dict>
+            <key>UILaunchImageMinimumOSVersion</key>
+            <string>7.0</string>
+            <key>UILaunchImageName</key>
+            <string>Default-568h</string>
+            <key>UILaunchImageOrientation</key>
+            <string>Portrait</string>
+            <key>UILaunchImageSize</key>
+            <string>{320, 568}</string>
+        </dict>
+    </array>    
+    </dict>
+</plist>
