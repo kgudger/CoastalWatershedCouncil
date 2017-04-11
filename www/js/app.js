@@ -311,7 +311,7 @@ function photoCap() {
 				ctx.lineWidth=3;
 				ctx.fillStyle="yellow";
 //				ctx.lineStyle="#ffff00";
-				ctx.font="5px sans-serif";
+				ctx.font="45px sans-serif";
 				var text = "Lat=" + currentLatitude ;
 				ctx.strokeStyle = 'black';
 				ctx.strokeText(text,10,10);

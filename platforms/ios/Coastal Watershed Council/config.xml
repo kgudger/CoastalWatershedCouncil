@@ -44,6 +44,9 @@
     <allow-intent href="geo:*" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
+    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">
+        <false/>
+    </gap:config-file>
     <icon height="180" src="www/images/CWClogo180.png" width="180" />
     <icon height="60" src="www/images/CWClogo60.png" width="60" />
     <icon height="120" src="www/images/CWClogo120.png" width="120" />

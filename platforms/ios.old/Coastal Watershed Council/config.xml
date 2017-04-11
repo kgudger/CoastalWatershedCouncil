@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.cdc.datacard" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="LocalStorage">
+        <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+    <feature name="Camera">
+        <param name="ios-package" value="CDVCamera" />
+    </feature>
+    <feature name="File">
+        <param name="ios-package" value="CDVFile" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
+    <feature name="Media">
+        <param name="ios-package" value="CDVSound" />
+    </feature>
+    <feature name="Capture">
+        <param name="ios-package" value="CDVCapture" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Canvas2ImagePlugin">
+        <param name="ios-package" value="Canvas2ImagePlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>Coastal Watershed Council</name>
+    <description>
+        Field Data Sheet Input Application.
+    </description>
+    <author email="kgudger@gmail.com" href="http://coastal-watershed.org/">
+        Keith Gudger
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <allow-intent href="itms:*" />
+    <allow-intent href="itms-apps:*" />
+    <icon height="180" src="www/images/CWClogo180.png" width="180" />
+    <icon height="60" src="www/images/CWClogo60.png" width="60" />
+    <icon height="120" src="www/images/CWClogo120.png" width="120" />
+    <icon height="76" src="www/images/CWClogo76.png" width="76" />
+    <icon height="152" src="www/images/CWClogo152.png" width="152" />
+    <icon height="40" src="www/images/CWClogo40.png" width="40" />
+    <icon height="80" src="www/images/CWClogo80.png" width="80" />
+    <icon height="57" src="www/images/CWClogo57.png" width="57" />
+    <icon height="114" src="www/images/CWClogo114.png" width="114" />
+    <icon height="72" src="www/images/CWClogo72.png" width="72" />
+    <icon height="144" src="www/images/CWClogo144.png" width="144" />
+    <icon height="29" src="www/images/CWClogo29.png" width="29" />
+    <icon height="58" src="www/images/CWClogo58.png" width="58" />
+    <icon height="50" src="www/images/CWClogo50.png" width="50" />
+    <icon height="100" src="www/images/CWClogo100.png" width="100" />
+    <splash height="480" src="www/images/splash320x480.png" width="320" />
+    <splash height="1024" src="www/images/splash768x1024.png" width="768" />
+    <splash height="2048" src="www/images/splash15362048.png" width="1536" />
+    <splash height="480" platform="ios" src="www/images/splash320426.png" width="320" />
+    <splash height="960" platform="ios" src="www/images/splash640x960.png" width="640" />
+    <splash height="1136" platform="ios" src="www/images/splash640x1136.png" width="640" />
+    <splash height="1136" platform="ios" src="platforms/ios/Coastal Watershed Council/Resources/splash/Default-568h@2x.png" width="640" />
+    <splash height="1334" platform="ios" src="www/images/splash750x1334.png" width="750" />
+    <splash height="2208" platform="ios" src="www/images/splash1242x2208.png" width="1242" />
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="BackupWebStorage" value="cloud" />
+    <preference name="DisallowOverscroll" value="false" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="GapBetweenPages" value="0" />
+    <preference name="PageLength" value="0" />
+    <preference name="PaginationBreakingMode" value="page" />
+    <preference name="PaginationMode" value="unpaginated" />
+    <preference name="CameraUsesGeolocation" value="false" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="android-minSdkVersion" value="14" />
+</widget>
