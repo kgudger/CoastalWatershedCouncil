@@ -265,7 +265,7 @@ function sendfunc(params) {
 			  }
           }
 	}
-	xmlhttp.open("GET","http://home.loosescre.ws/~keith/CWC/server.php" + '?' + params, true);
+	xmlhttp.open("GET","http://coastalwatershedcouncil.tk/server.php" + '?' + params, true);
 //	xmlhttp.open("GET","http://www.saveourshores.org/server.php" + '?' + params, true);
 	xmlhttp.send(null);
     }
