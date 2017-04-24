@@ -529,6 +529,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Coastal Watershed Council/Coastal Watershed Council-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,
@@ -561,6 +562,7 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Coastal Watershed Council/Coastal Watershed Council-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					CoreFoundation,
